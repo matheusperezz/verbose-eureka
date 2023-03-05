@@ -27,6 +27,42 @@ class ListNode {
         }
 };
 
+int sizeOfLinkedList(ListNode* head){
+    int count = 0;
+    ListNode* current = head;
+    while (current != nullptr){
+        count++;
+        current = current->next;
+    }
+    return count;
+}
+
+bool isEmptyLinkedList(ListNode* head){
+    int count = 0;
+    ListNode* current = head;
+    while (current != nullptr){
+        count++;
+        current = current->next;
+    }
+    if (count == 0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+ListNode* findNodeByPosition(ListNode* head, int position){
+    int pivot = 0;
+    ListNode* current = head;
+    while (current != nullptr){
+        if (pivot == position){
+            return current;
+        }
+        pivot++;
+        current = current->next;
+    }
+}
+
 ListNode* searchNode(ListNode* head ,int val){
     ListNode* current = head;
     while(current != nullptr){
@@ -56,6 +92,7 @@ int main(){
     ListNode* n1 = new ListNode(3);
     ListNode* n2 = new ListNode(4);
     ListNode* n56 = new ListNode(9);
+    ListNode* n99 = nullptr;
     head->prev = nullptr;
     head-> next = n1;
     n1->prev = head;
@@ -65,8 +102,15 @@ int main(){
     pushNode(head, n56);
 
     ListNode* valueOfThree = searchNode(head, 3);
+    ListNode* positionTwo = findNodeByPosition(head, 2);
+    int linkedListSize = sizeOfLinkedList(head);
+    bool isEmpty = isEmptyLinkedList(n99);
+
     cout << valueOfThree->val << endl;
     cout << n2->next->val << endl;
+    cout << "find by position 2: " << positionTwo->val << endl;
+    cout << "Size of linked list: " << linkedListSize << endl;
+    cout << "Is n99 empty? " << isEmpty << endl;
 
     return 0;
 }

@@ -368,21 +368,21 @@ Escreva código em um quadro branco ou papel, não em um computador. Teste com u
         - [x] [CS 61B - Linked Lists 1 (video)](https://www.youtube.com/watch?v=htzJdKoEmO0&list=PL4BBB74C7D2A1049C&index=7) (CS 61B - Listas Ligadas 1 - vídeo)
         - [x] [CS 61B - Linked Lists 2 (video)](https://www.youtube.com/watch?v=-c4I3gFYe3w&index=8&list=PL4BBB74C7D2A1049C) (CS 61B - Listas Ligadas 2 - vídeo)
         - [x] [[Review] Linked lists in 4 minutes (video)](https://youtu.be/F8AbOfQwl1c)
-    - [ ] [C Code (video)](https://www.youtube.com/watch?v=QN6FPiD0Gzo) (Código em C - vídeo)
+    - [x] [C Code (video)](https://www.youtube.com/watch?v=QN6FPiD0Gzo) (Código em C - vídeo)
             - não o vídeo inteiro, apenas as partes sobre estrutura de nodes (nós) e alocação de memória.
     - [ ] Listas Ligadas vs Arrays:
         - [Core Linked Lists Vs Arrays (video)](https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/rjBs9/core-linked-lists-vs-arrays) (Fundamentos de Listas Ligadas vs Arrays - vídeo)
         - [In The Real World Linked Lists Vs Arrays (video)](https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/QUaUd/in-the-real-world-lists-vs-arrays) (No Mundo Real: Listas Ligadas vs Arrays - vídeo)
     - [ ] [why you should avoid linked lists (video)](https://www.youtube.com/watch?v=YQs6IC-vgmo) (por que você deve evitar listas ligadas - vídeo)
-    - [ ] Peguei vocês: você precisa de conhecimento de ponteiro para ponteiro:
+    - [x] Peguei vocês: você precisa de conhecimento de ponteiro para ponteiro:
         (para quando você passar um ponteiro para uma funcção que poderá mudar o endereço para o qual o ponteiro aponta)
         Essa página é só para ter uma noção sobre ponteiro para ponteiro. Eu não recomendo o estilo transversal dessa lista. Legibilidade e manutenção sofrem devido à engenhosidade.
         - [Pointers to Pointers](https://www.eskimo.com/~scs/cclass/int/sx8.html) (Ponteiros para Ponteiros)
-    - [ ] implementar (eu fiz com e sem ponteiro de cauda, ponteiro que aponta para o último node (nó) da lista):
-        - [ ] size() - retorna o número de elementos de dados na lista
-        - [ ] empty() - boleano retorna verdadeiro se estiver vazio
-        - [ ] value_at(índice) - retorna o valor do item n (começando no 0 para o primeiro)
-        - [ ] push_front(valor) - adiciona um item no início da lista, logo antes do seu atual primeiro elemento
+    - [x] implementar (eu fiz com e sem ponteiro de cauda, ponteiro que aponta para o último node (nó) da lista):
+        - [x] size() - retorna o número de elementos de dados na lista
+        - [x] empty() - boleano retorna verdadeiro se estiver vazio
+        - [x] value_at(índice) - retorna o valor do item n (começando no 0 para o primeiro)
+        - [x] push_front(valor) - adiciona um item no início da lista, logo antes do seu atual primeiro elemento
         - [ ] pop_front() - remove o item do início da lista e retorna o seu valor
         - [ ] push_back(valor) - adiciona um item no final da lista
         - [ ] pop_back() - remove um item do final e retorna seu valor

@@ -28,8 +28,40 @@ void dynamic_array_impl(){
     }
 }
 
+void dynamic_push(){
+    const int size = 4;
+    const int new_size = size + 1;
+    int some_array[size] = {1,2,3,4};
+    int* myPointer = (int*) calloc(4, sizeof(int));
+    
+    for (int i = 0; i < size; i++){
+        myPointer[i] = some_array[i];
+    }
+    
+    for (int i = 0; i < new_size; i++){
+        cout << "Position " << i << ": " << myPointer[i] << endl;
+    }
+
+    myPointer = (int*) realloc(myPointer, new_size * sizeof(int));
+    myPointer[size] = 24;
+
+    for (int i = 0; i < new_size; i++){
+        cout << "Position " << i << ": " << myPointer[i] << endl;
+    }
+
+    for (int i = 0; i < new_size; i++){
+        some_array[i] = myPointer[i];
+    }
+
+    for (int i = 0; i < new_size; i++){
+        cout << "Position some_array" << i << ": " << some_array[i] << endl;
+    }
+
+    free(myPointer);
+}
+
 int main(int argc, char *argv[]){
 
-
+    dynamic_push();
     return 0;
 }
