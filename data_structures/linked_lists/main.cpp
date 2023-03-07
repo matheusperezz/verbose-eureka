@@ -86,6 +86,72 @@ void pushNode(ListNode* head, ListNode* tail){
     }
 }
 
+void popNode(ListNode* head){
+    ListNode* current = head;
+    ListNode* current_prev = head->prev;
+    while(current != nullptr){
+        if (current->next == nullptr){
+            current = current_prev;
+            current->next = nullptr;
+            break;
+        }
+        current = current->next;
+        current_prev = current->prev;
+    }
+}
+
+void pushValue(ListNode* head, int value){
+    ListNode* current = head;
+    ListNode* next_current = new ListNode(value);
+    while(current != nullptr){
+        if (current->next == nullptr){
+            current->next = next_current;
+            next_current->next = nullptr;
+        }
+        current = current->next;
+    }
+}
+
+void nodeInsert(ListNode* head, int position, int value){
+    int pivot = 0;
+    ListNode* current = head;
+    ListNode* current_prev = head->prev;
+    ListNode* current_copy;
+    ListNode* newNode = new ListNode(value);
+    while(current != nullptr){
+        if(pivot == position){
+            current->prev = newNode;
+            newNode->next = current;
+            newNode->prev = current_prev;
+            current_prev->next = newNode;
+            break;
+        }
+        pivot++;
+        current = current->next;
+        current_prev = current->prev;
+    }
+}
+
+void nodeErase(ListNode* head, int position){
+    int pivot = 0;
+    ListNode* current = head;
+    ListNode* current_prev = head->prev;
+    ListNode* current_next = head->next;
+    while(current != nullptr){
+        if(pivot == position){
+            current_prev->next = current_next;
+            current_next->prev = current_prev;
+            delete current;
+            break;
+        }
+
+        pivot++;
+        current = current->next;
+        current_prev = current->prev;
+        current_next = current_next->next;
+    }
+}
+
 int main(){
 
     ListNode* head = new ListNode(2);
@@ -107,10 +173,23 @@ int main(){
     bool isEmpty = isEmptyLinkedList(n99);
 
     cout << valueOfThree->val << endl;
-    cout << n2->next->val << endl;
+    cout << head->val << endl;
     cout << "find by position 2: " << positionTwo->val << endl;
     cout << "Size of linked list: " << linkedListSize << endl;
     cout << "Is n99 empty? " << isEmpty << endl;
+    popNode(head);
+    cout << "Now im poping the last item" << endl;
+    
+    pushValue(head, 6);
+    nodeInsert(head, 2, 8);
+    nodeErase(head, 2);
+
+    ListNode* current = head;
+    while (current != nullptr){
+        cout << current->val << " ";
+        current = current->next; 
+    }
+    cout << endl;
 
     return 0;
 }

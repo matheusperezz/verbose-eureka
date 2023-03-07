@@ -383,13 +383,13 @@ Escreva código em um quadro branco ou papel, não em um computador. Teste com u
         - [x] empty() - boleano retorna verdadeiro se estiver vazio
         - [x] value_at(índice) - retorna o valor do item n (começando no 0 para o primeiro)
         - [x] push_front(valor) - adiciona um item no início da lista, logo antes do seu atual primeiro elemento
-        - [ ] pop_front() - remove o item do início da lista e retorna o seu valor
-        - [ ] push_back(valor) - adiciona um item no final da lista
-        - [ ] pop_back() - remove um item do final e retorna seu valor
-        - [ ] front() - obtém valor do item que está no início da lista
-        - [ ] back() - obtém valor do item que está no final da lista
-        - [ ] insert(índice, valor) - insere "valor" no "índice", e depois o item atual naquele índice é apontado pelo novo item no "índice"
-        - [ ] erase(índice) - remove o node (nó) no índice fornecido
+        - [x] pop_front() - remove o item do início da lista e retorna o seu valor
+        - [x] push_back(valor) - adiciona um item no final da lista
+        - [x] pop_back() - remove um item do final e retorna seu valor
+        - [x] front() - obtém valor do item que está no início da lista
+        - [x] back() - obtém valor do item que está no final da lista
+        - [x] insert(índice, valor) - insere "valor" no "índice", e depois o item atual naquele índice é apontado pelo novo item no "índice"
+        - [x] erase(índice) - remove o node (nó) no índice fornecido
         - [ ] value_n_from_end(n) - retorna o valor do node (nó) na posição n a partir do final da lista
         - [ ] reverse() - reverte a lista
         - [ ] remove_value(valor) - remove o primeiro item na lista com esse valor
