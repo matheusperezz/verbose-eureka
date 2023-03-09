@@ -390,10 +390,10 @@ Escreva código em um quadro branco ou papel, não em um computador. Teste com u
         - [x] back() - obtém valor do item que está no final da lista
         - [x] insert(índice, valor) - insere "valor" no "índice", e depois o item atual naquele índice é apontado pelo novo item no "índice"
         - [x] erase(índice) - remove o node (nó) no índice fornecido
-        - [ ] value_n_from_end(n) - retorna o valor do node (nó) na posição n a partir do final da lista
-        - [ ] reverse() - reverte a lista
-        - [ ] remove_value(valor) - remove o primeiro item na lista com esse valor
-    - [ ] Listas Ligadas Duplamente
+        - [x] value_n_from_end(n) - retorna o valor do node (nó) na posição n a partir do final da lista
+        - [x] reverse() - reverte a lista
+        - [x] remove_value(valor) - remove o primeiro item na lista com esse valor
+    - [x] Listas Ligadas Duplamente
         - [Description (video)](https://www.coursera.org/learn/data-structures/lecture/jpGKD/doubly-linked-lists) (Descrição - vídeo)
         - Não há necessidade de implementar
 
