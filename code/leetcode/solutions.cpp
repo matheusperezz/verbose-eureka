@@ -298,6 +298,7 @@ void addTwoNumbersLinkedLists(ListNode* l1, ListNode* l2){
 }
 
 ListNode* reverseList(ListNode* head){
+
     ListNode* prev = nullptr;
     ListNode* curr = head;
 
@@ -309,4 +310,34 @@ ListNode* reverseList(ListNode* head){
     }
 
     return prev;
+}
+
+ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+
+    ListNode* result = new ListNode();
+    ListNode* head = result;
+
+    ListNode* head1 = list1;
+    ListNode* head2 = list2;
+
+    while (head1 != nullptr && head2 != nullptr) {
+        if (head1->val < head2->val) {
+            head->next = head1;
+            head1 = head1->next;
+        } else {
+            head->next = head2;
+            head2 = head2->next;
+        }
+        head = head->next;
+    }
+
+    if (head1 != nullptr) {
+        head->next = head1;
+    } else if (head2 != nullptr) {
+        head->next = head2;
+    }
+
+    head = result->next;
+    delete result;
+    return head;
 }

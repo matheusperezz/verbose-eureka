@@ -6,6 +6,7 @@
 using namespace std;
 
 class ListNode;
+ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 ListNode* removeNthFromEnd(ListNode* head, int n);
 vector<string> letterCombinations(string digits);
 int threeSumClosest(vector<int>& nums, int target);

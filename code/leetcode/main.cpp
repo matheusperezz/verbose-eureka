@@ -13,17 +13,55 @@
 
 using namespace std;
 
+class ListNode {
+    public:
+        int val;
+        ListNode* next;
+
+        // Construtores
+        ListNode(){
+            val = 0;
+            next = nullptr;
+        }
+
+        ListNode(int val){
+            this->val = val;
+            next = nullptr;
+        }
+
+        ListNode(int val, ListNode* next){
+            this->val = val;
+            this->next = next;
+        }
+};
 
 int main(){
-    unordered_map<int, string> months = {
-        {1, "Janeiro"},{2, "Fevereiro"},{3, "Março"},
-        {4, "Abril"},{5, "Maio"},{6, "Junho"},
-        {7, "Julho"},{8, "Agosto"},{9, "Setembro"},
-        {10, "Outubro"},{11, "Novembro"},{12, "Dezembro"},
-    };
 
-    int n;
-    cin >> n;
-    cout << months[n] << endl;
+    ListNode* l11 = new ListNode(4);
+    ListNode* l12 = new ListNode(5);
+    ListNode* l13 = new ListNode(6);
+    ListNode* l14 = new ListNode(7);
+    l11->next = l12;
+    l12->next = l13;
+    l13->next = l14;
+    l14->next = nullptr;
+
+    ListNode* l21 = new ListNode(1);
+    ListNode* l22 = new ListNode(2);
+    ListNode* l23 = new ListNode(88);
+    ListNode* l24 = new ListNode(90);
+    l21->next = l22;
+    l22->next = l23;
+    l23->next = l24;
+    l24->next = nullptr;
+
+
+    ListNode* aa = mergeTwoLists(l11, l21);
+    ListNode* ss = aa;
+    while (ss != nullptr){
+        cout << "Eita: " << ss->val << endl;
+        ss = ss->next;
+    }
+
     return 0;
 }
