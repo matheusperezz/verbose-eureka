@@ -126,8 +126,12 @@ int main()
     hashMap.put("trinta", 30);
 
     cout << "Valor chave 'vinte': " << hashMap.get("vinte") << endl;
+    cout << "Valor chave 'naoexiste': " << hashMap.get("naoexiste") << endl;
+    cout << "Valor chave 'dez': " << hashMap.get("dez") << endl;
 
     hashMap.remove("vinte");
+
+    cout << "Valor da chave 'vinte' apos a remocao: " << hashMap.get("vinte") << endl;
 
     return 0;
 }
