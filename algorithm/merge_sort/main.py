@@ -3,8 +3,8 @@ def merge_sort(arr):
         return arr
 
     mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
+    left = merge_sort(arr[:mid])  # 38, 27, 43
+    right = merge_sort(arr[mid:])  # 3, 9, 10
 
     return merge(left, right)
 
