@@ -48,3 +48,12 @@ avarage_salary_by_bucket = {
 }
 
 print(f'Média de salário por tempo: {avarage_salary_by_bucket}')
+
+
+def predict_paid_or_unpaid(year_experience):
+    if year_experience < 3.0:
+        return "paid"
+    elif year_experience < 8.5:
+        return "unpaid"
+    else:
+        return "paid"
