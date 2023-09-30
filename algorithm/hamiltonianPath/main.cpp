@@ -12,27 +12,32 @@ vector<bool> visited;
 vector<int> path;
 int cost;
 
-void findHamiltonianPath(int start){
+void findHamiltonianPath(int start)
+{
     visited.assign(n, false); // init the visited vectors
-    path.clear(); // clear the hamiltonian path
-    cost = 0; // total cost
+    path.clear();             // clear the hamiltonian path
+    cost = 0;                 // total cost
 
     path.push_back(start); // add the first vertice in path
     visited[start] = true; // mark the first vertice as visited
 
-    for (int i = 0; i < n - 1; i++){
+    for (int i = 0; i < n - 1; i++)
+    {
         int last = path.back();
         int next = -1;
         int dist = INF;
 
-        for (int j = 0; j < n; j++){
-            if (!visited[j] && graph[last][j] < dist){
+        for (int j = 0; j < n; j++)
+        {
+            if (!visited[j] && graph[last][j] < dist)
+            {
                 next = j;
                 dist = graph[last][j];
             }
         }
 
-        if (next == -1){
+        if (next == -1)
+        {
             return;
         }
 
@@ -42,7 +47,8 @@ void findHamiltonianPath(int start){
     }
 }
 
-int main(){
+int main()
+{
 
     n = 5;
     graph.assign(n, vector<int>(n, INF));
@@ -62,7 +68,8 @@ int main(){
     findHamiltonianPath(4);
 
     cout << "Hamiltonian Path: ";
-    for (int i : path){
+    for (int i : path)
+    {
         cout << i << " ";
     }
     cout << endl;
