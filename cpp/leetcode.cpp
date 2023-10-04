@@ -1,11 +1,17 @@
 //
 // Created by Matheus on 04/10/2023.
-// Problem 101 Leetcode
+//
+// Problem 101 - Symetric BTree                     - 04/10/23.
+// Problem 104 - Maximum Depth of Binary Tree       - 04/10/23.
+
 
 #include <iostream>
 
 using namespace std;
 
+int minhaFuncao() {
+    return 42;
+}
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -13,7 +19,6 @@ struct TreeNode {
 
     explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
-
 class Solution101 {
 public:
     bool isSymetric(TreeNode *root) {
@@ -37,7 +42,6 @@ public:
                 isMirror(left->right, right->left));
     }
 };
-
 void solution_101() {
 
     TreeNode *root = new TreeNode(1);
@@ -54,7 +58,32 @@ void solution_101() {
     bool output = solution101.isSymetric(root);
     cout << (output ? "true" : "false") << endl;
 }
+class Solution104 {
+public:
+    int maxDepth(TreeNode* root) {
+        if(!root){
+            return 0;
+        }
 
-int minhaFuncao() {
-    return 42;
+        int leftMax = maxDepth(root->left);
+        int rightMax = maxDepth(root->right);
+
+        return max(leftMax, rightMax) + 1;
+    }
+};
+void solution_104(){
+    TreeNode *root = new TreeNode(1);
+    root->left =  new TreeNode(2);
+    root->left->left = new TreeNode(5);
+
+    root->right = new TreeNode(1);
+    root->right->left = new TreeNode(1);
+    root->right->right = new TreeNode(8);
+    root->right->left->right = new TreeNode(98);
+
+    Solution104 s;
+    int depth = s.maxDepth(root);
+    cout << "Max Depth: " << depth << endl;
 }
+
+

@@ -7,5 +7,6 @@
 
 int minhaFuncao();
 void solution_101();
+void solution_104();
 
 #endif //LEETCODE_H
