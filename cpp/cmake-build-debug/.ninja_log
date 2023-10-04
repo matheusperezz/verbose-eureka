@@ -1,0 +1,14 @@
+# ninja log v5
+0	321	7181385552509740	CMakeFiles/cpp.dir/main.cpp.obj	8b3f4199a8cd50cc
+324	402	7181385553296287	cpp.exe	37536801e45c4d5b
+2	340	7181392082474459	CMakeFiles/cpp.dir/main.cpp.obj	8b3f4199a8cd50cc
+6	357	7181392082662193	CMakeFiles/cpp.dir/leetcode.cpp.obj	9d76b4858d2abd74
+357	442	7181392083489748	cpp.exe	81c5c667d909bced
+4	395	7181425712538304	CMakeFiles/cpp.dir/main.cpp.obj	8b3f4199a8cd50cc
+10	417	7181425712769064	CMakeFiles/cpp.dir/leetcode.cpp.obj	9d76b4858d2abd74
+4	346	7181426630195439	CMakeFiles/cpp.dir/leetcode.cpp.obj	9d76b4858d2abd74
+346	424	7181426630958491	cpp.exe	81c5c667d909bced
+2	336	7181436877919227	CMakeFiles/cpp.dir/leetcode.cpp.obj	9d76b4858d2abd74
+337	414	7181436878670750	cpp.exe	81c5c667d909bced
+2	343	7181437342152321	CMakeFiles/cpp.dir/leetcode.cpp.obj	9d76b4858d2abd74
+343	414	7181437342837299	cpp.exe	81c5c667d909bced
