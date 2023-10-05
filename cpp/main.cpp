@@ -4,6 +4,10 @@
 using namespace std;
 
 int main() {
-    solution_104();
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    for (int c : arr)
+        cout << c << " ";
+
+    cout << endl;
     return 0;
 }

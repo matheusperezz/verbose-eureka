@@ -1,8 +1,9 @@
 //
 // Created by Matheus on 04/10/2023.
 //
-// Problem 101 - Symetric BTree                     - 04/10/23.
-// Problem 104 - Maximum Depth of Binary Tree       - 04/10/23.
+// Problem 101  - Symetric BTree                                        - 04/10/23.
+// Problem 104  - Maximum Depth of Binary Tree                          - 04/10/23.
+// Problem 28   - Find the Index of the First Occurrence in a String    - 05/10/23.
 
 
 #include <iostream>
@@ -12,6 +13,7 @@ using namespace std;
 int minhaFuncao() {
     return 42;
 }
+
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -19,6 +21,27 @@ struct TreeNode {
 
     explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
+
+/* Solutions */
+class Solution28 {
+public:
+    int strStr(string haystack, string needle) {
+        int needle_len = needle.length();
+        for (int i = 0; i < haystack.length(); i++) {
+            if (haystack.substr(i, needle_len) == needle) {
+                return i;
+            }
+        }
+        return -1;
+    }
+};
+
+void solution_28() {
+    Solution28 s;
+    int output = s.strStr("leetcode", "leeto");
+    cout << "Output: " << output << endl;
+}
+
 class Solution101 {
 public:
     bool isSymetric(TreeNode *root) {
@@ -42,6 +65,7 @@ public:
                 isMirror(left->right, right->left));
     }
 };
+
 void solution_101() {
 
     TreeNode *root = new TreeNode(1);
@@ -58,10 +82,11 @@ void solution_101() {
     bool output = solution101.isSymetric(root);
     cout << (output ? "true" : "false") << endl;
 }
+
 class Solution104 {
 public:
-    int maxDepth(TreeNode* root) {
-        if(!root){
+    int maxDepth(TreeNode *root) {
+        if (!root) {
             return 0;
         }
 
@@ -71,9 +96,10 @@ public:
         return max(leftMax, rightMax) + 1;
     }
 };
-void solution_104(){
+
+void solution_104() {
     TreeNode *root = new TreeNode(1);
-    root->left =  new TreeNode(2);
+    root->left = new TreeNode(2);
     root->left->left = new TreeNode(5);
 
     root->right = new TreeNode(1);
@@ -85,5 +111,3 @@ void solution_104(){
     int depth = s.maxDepth(root);
     cout << "Max Depth: " << depth << endl;
 }
-
-

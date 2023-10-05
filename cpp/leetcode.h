@@ -6,6 +6,7 @@
 #define LEETCODE_H
 
 int minhaFuncao();
+void solution_28();
 void solution_101();
 void solution_104();
 
