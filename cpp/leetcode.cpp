@@ -4,9 +4,12 @@
 // Problem 101  - Symetric BTree                                        - 04/10/23.
 // Problem 104  - Maximum Depth of Binary Tree                          - 04/10/23.
 // Problem 28   - Find the Index of the First Occurrence in a String    - 05/10/23.
+// Problem 58   - Length of Last Word                                   - 06/10/23.
 
 
 #include <iostream>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
@@ -110,4 +113,24 @@ void solution_104() {
     Solution104 s;
     int depth = s.maxDepth(root);
     cout << "Max Depth: " << depth << endl;
+}
+
+class Solution58 {
+public:
+    int lengthOfLastWord(string s) {
+        istringstream iss(s);
+        vector<string> words;
+        string w;
+        while (iss >> w){
+            words.push_back(w);
+        }
+        int result = words.back().length();
+        return result;
+    }
+};
+
+void solution_58() {
+    Solution58 s;
+    int output = s.lengthOfLastWord("   fly me   to   the moon  ");
+    cout << output << endl;
 }
