@@ -8,6 +8,7 @@
 int minhaFuncao();
 void solution_28();
 void solution_58();
+void solution_66();
 void solution_101();
 void solution_104();
 

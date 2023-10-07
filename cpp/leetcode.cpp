@@ -5,11 +5,13 @@
 // Problem 104  - Maximum Depth of Binary Tree                          - 04/10/23.
 // Problem 28   - Find the Index of the First Occurrence in a String    - 05/10/23.
 // Problem 58   - Length of Last Word                                   - 06/10/23.
+// Problem 66   - Plus One                                              - 07/10/23.
 
 
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -133,4 +135,35 @@ void solution_58() {
     Solution58 s;
     int output = s.lengthOfLastWord("   fly me   to   the moon  ");
     cout << output << endl;
+}
+
+class Solution66 {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int n = digits.size();
+        vector<int> result(n, 0);
+        int carry = 1;
+
+        for (int i = n -1; i >= 0; i--){
+            int sum = digits[i] + carry;
+            result[i] = sum % 10;
+            carry = sum / 10;
+        }
+
+        if (carry > 0){
+            result.insert(result.begin(), carry);
+        }
+
+        return result;
+    }
+};
+
+void solution_66(){
+    vector<int> v = {6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3};
+    Solution66 s;
+    vector<int> output = s.plusOne(v);
+    for (auto &e: output)
+        cout << e << " ";
+
+    cout << endl;
 }

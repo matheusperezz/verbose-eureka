@@ -4,6 +4,6 @@
 using namespace std;
 
 int main() {
-    solution_58();
+    solution_66();
     return 0;
 }
