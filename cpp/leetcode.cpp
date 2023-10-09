@@ -6,12 +6,14 @@
 // Problem 28   - Find the Index of the First Occurrence in a String    - 05/10/23.
 // Problem 58   - Length of Last Word                                   - 06/10/23.
 // Problem 66   - Plus One                                              - 07/10/23.
+// Problem 67   - Add Binary                                            - 08/10/23.
 
 
 #include <iostream>
 #include <sstream>
 #include <vector>
 #include <math.h>
+#include <bitset>
 
 using namespace std;
 
@@ -123,7 +125,7 @@ public:
         istringstream iss(s);
         vector<string> words;
         string w;
-        while (iss >> w){
+        while (iss >> w) {
             words.push_back(w);
         }
         int result = words.back().length();
@@ -139,18 +141,18 @@ void solution_58() {
 
 class Solution66 {
 public:
-    vector<int> plusOne(vector<int>& digits) {
+    vector<int> plusOne(vector<int> &digits) {
         int n = digits.size();
         vector<int> result(n, 0);
         int carry = 1;
 
-        for (int i = n -1; i >= 0; i--){
+        for (int i = n - 1; i >= 0; i--) {
             int sum = digits[i] + carry;
             result[i] = sum % 10;
             carry = sum / 10;
         }
 
-        if (carry > 0){
+        if (carry > 0) {
             result.insert(result.begin(), carry);
         }
 
@@ -158,12 +160,55 @@ public:
     }
 };
 
-void solution_66(){
-    vector<int> v = {6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3};
+void solution_66() {
+    vector<int> v = {6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 3};
     Solution66 s;
     vector<int> output = s.plusOne(v);
     for (auto &e: output)
         cout << e << " ";
 
     cout << endl;
+}
+
+class Solution67 {
+public:
+    string addBinary(string a, string b) {
+        // Certifies that two strings has the same size, filled with zeros
+        // if needed
+
+        int l1 = a.length();
+        int l2 = b.length();
+        int max_l = max(l1, l2);
+
+        a = string(max_l - l1, '0') + a;
+        b = string(max_l - l2, '0') + b;
+
+        string result;
+        int carry = 0;
+
+        // Make the binary add from right to the left
+        for (int i = max_l - 1; i >= 0; i--) {
+            int bit1 = a[i] - '0';
+            int bit2 = b[i] - '0';
+
+            int sum = bit1 + bit2 + carry;
+            result.insert(result.begin(), '0' + (sum % 2));
+            carry = sum / 2;
+        }
+
+        if (carry > 0){
+            result.insert(result.begin(), '0' + carry);
+        }
+
+        return result;
+    }
+};
+
+void solution_67() {
+    Solution67 s;
+    string a = "110";   // 6    0110
+    string b = "11";    // 3    0011
+                        //      1001
+    string output = s.addBinary(a, b);
+    cout << "Output: " << output << endl;
 }
