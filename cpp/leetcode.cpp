@@ -212,3 +212,30 @@ void solution_67() {
     string output = s.addBinary(a, b);
     cout << "Output: " << output << endl;
 }
+
+class Solution69 {
+public:
+    int mySqrt(int x) {
+        return (int) sqrt(x);
+    }
+
+    int mySqrt2(int x) {
+        int low = 0 ;
+        int high = x ;
+        while(low<=high)
+        {
+            long long mid = (low+high)/2;
+            if(mid*mid==x) return mid;
+            else if(mid*mid>x) high = mid-1;
+            else  low = mid +1 ;
+
+        }
+        // return the lower bound of the number
+        return high;
+    }
+};
+
+void solution_69(){
+    Solution69 s;
+    int output = s.mySqrt(8);
+}
