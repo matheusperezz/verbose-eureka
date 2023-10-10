@@ -7,6 +7,7 @@
 // Problem 58   - Length of Last Word                                   - 06/10/23.
 // Problem 66   - Plus One                                              - 07/10/23.
 // Problem 67   - Add Binary                                            - 08/10/23.
+// Problem 67   - MySquareRoot                                          - 09/10/23.
 
 
 #include <iostream>
