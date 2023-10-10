@@ -8,6 +8,7 @@
 // Problem 66   - Plus One                                              - 07/10/23.
 // Problem 67   - Add Binary                                            - 08/10/23.
 // Problem 69   - MySquareRoot                                          - 09/10/23.
+// Problem 83   - Remove Duplicates from Sorted List                    - 09/10/23.
 
 
 #include <iostream>
@@ -28,6 +29,17 @@ struct TreeNode {
     TreeNode *right;
 
     explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+struct ListNode {
+    int val;
+    ListNode *next;
+
+    ListNode() : val(0), next(nullptr) {}
+
+    ListNode(int x) : val(x), next(nullptr) {}
+
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 /* Solutions */
@@ -197,7 +209,7 @@ public:
             carry = sum / 2;
         }
 
-        if (carry > 0){
+        if (carry > 0) {
             result.insert(result.begin(), '0' + carry);
         }
 
@@ -209,7 +221,7 @@ void solution_67() {
     Solution67 s;
     string a = "110";   // 6    0110
     string b = "11";    // 3    0011
-                        //      1001
+    //      1001
     string output = s.addBinary(a, b);
     cout << "Output: " << output << endl;
 }
@@ -221,14 +233,13 @@ public:
     }
 
     int mySqrt2(int x) {
-        int low = 0 ;
-        int high = x ;
-        while(low<=high)
-        {
-            long long mid = (low+high)/2;
-            if(mid*mid==x) return mid;
-            else if(mid*mid>x) high = mid-1;
-            else  low = mid +1 ;
+        int low = 0;
+        int high = x;
+        while (low <= high) {
+            long long mid = (low + high) / 2;
+            if (mid * mid == x) return mid;
+            else if (mid * mid > x) high = mid - 1;
+            else low = mid + 1;
 
         }
         // return the lower bound of the number
@@ -236,7 +247,44 @@ public:
     }
 };
 
-void solution_69(){
+void solution_69() {
     Solution69 s;
     int output = s.mySqrt(8);
+}
+
+class Solution83 {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* current = head;
+        while (current && current->next) {
+            if (current->val == current->next->val){
+                ListNode* duplicate = current->next;
+                current->next = duplicate->next;
+                delete duplicate;
+            } else {
+                current = current->next;
+            }
+        }
+
+        return head;
+    }
+};
+
+void solution_83(){
+    Solution83 s;
+    ListNode* h = new ListNode(2);
+    h->next = new ListNode(3);
+    h->next->next = new ListNode(3);
+    h->next->next->next = new ListNode(4);
+    h->next->next->next->next = new ListNode(4);
+    h->next->next->next->next->next = new ListNode(4);
+    h->next->next->next->next->next->next = new ListNode(5);
+
+    s.deleteDuplicates(h);
+    ListNode* c = h;
+    while (c != nullptr){
+        cout << c->val << " ";
+        c = c->next;
+    }
+    cout << endl;
 }
