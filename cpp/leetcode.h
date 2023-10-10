@@ -12,6 +12,7 @@ void solution_66();
 void solution_67();
 void solution_69();
 void solution_83();
+void solution_88();
 void solution_101();
 void solution_104();
 

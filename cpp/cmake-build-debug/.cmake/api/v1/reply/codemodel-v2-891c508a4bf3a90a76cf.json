@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.26"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cpp::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cpp-Debug-d8ace3746b967f55da78.json",
+					"jsonFile" : "target-cpp-Debug-3193838f444d03db1285.json",
 					"name" : "cpp",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/matheusperez/Desktop/verbose-eureka/cpp/cmake-build-debug",
-		"source" : "/home/matheusperez/Desktop/verbose-eureka/cpp"
+		"build" : "C:/Users/Matheus/Documents/Code/verbose-eureka/cpp/cmake-build-debug",
+		"source" : "C:/Users/Matheus/Documents/Code/verbose-eureka/cpp"
 	},
 	"version" : 
 	{

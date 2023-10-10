@@ -9,6 +9,7 @@
 // Problem 67   - Add Binary                                            - 08/10/23.
 // Problem 69   - MySquareRoot                                          - 09/10/23.
 // Problem 83   - Remove Duplicates from Sorted List                    - 09/10/23.
+// Problem 88   - Merge Sorted Array                                    - 10/10/23.
 
 
 #include <iostream>
@@ -286,5 +287,52 @@ void solution_83(){
         cout << c->val << " ";
         c = c->next;
     }
+    cout << endl;
+}
+
+class Solution88 {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        vector<int> output;
+        int m_counter = 0;
+        int n_counter = 0;
+
+        while (m_counter != m && n_counter != n){
+            if (nums1[m_counter] <= nums2[n_counter]){
+                output.push_back(nums1[m_counter]);
+                m_counter++;
+            } else {
+                output.push_back(nums2[n_counter]);
+                n_counter++;
+            }
+        }
+
+        while (m_counter != m){
+            output.push_back(nums1[m_counter]);
+            m_counter++;
+        }
+
+        while (n_counter != n){
+            output.push_back(nums2[n_counter]);
+            n_counter++;
+        }
+
+        nums1 = output;
+    }
+};
+
+void solution_88(){
+    vector<int> a = {1};
+    vector<int> b = {};
+
+    int m = 0;
+    int n = 0;
+
+    Solution88 s;
+    s.merge(a, m, b, n);
+
+    for (auto &e : a)
+        cout << e << " ";
+
     cout << endl;
 }
