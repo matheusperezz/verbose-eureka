@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Matheus/Documents/Code/verbose-eureka/cpp/leetcode.cpp" "CMakeFiles/cpp.dir/leetcode.cpp.obj" "gcc" "CMakeFiles/cpp.dir/leetcode.cpp.obj.d"
-  "C:/Users/Matheus/Documents/Code/verbose-eureka/cpp/main.cpp" "CMakeFiles/cpp.dir/main.cpp.obj" "gcc" "CMakeFiles/cpp.dir/main.cpp.obj.d"
+  "/home/matheusperez/Desktop/verbose-eureka/cpp/leetcode.cpp" "CMakeFiles/cpp.dir/leetcode.cpp.o" "gcc" "CMakeFiles/cpp.dir/leetcode.cpp.o.d"
+  "/home/matheusperez/Desktop/verbose-eureka/cpp/main.cpp" "CMakeFiles/cpp.dir/main.cpp.o" "gcc" "CMakeFiles/cpp.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

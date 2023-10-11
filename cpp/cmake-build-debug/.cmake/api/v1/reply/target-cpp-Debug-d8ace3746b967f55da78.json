@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "cpp.exe"
-		},
-		{
-			"path" : "cpp.pdb"
+			"path" : "cpp"
 		}
 	],
 	"backtrace" : 1,
@@ -69,16 +66,12 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "cpp",
-	"nameOnDisk" : "cpp.exe",
+	"nameOnDisk" : "cpp",
 	"paths" : 
 	{
 		"build" : ".",
