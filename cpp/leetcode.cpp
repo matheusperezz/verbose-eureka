@@ -10,6 +10,8 @@
 // Problem 69   - MySquareRoot                                          - 09/10/23.
 // Problem 83   - Remove Duplicates from Sorted List                    - 09/10/23.
 // Problem 88   - Merge Sorted Array                                    - 10/10/23.
+// Problem 100  - Same Tree                                             - 11/10/23.
+// Problem 110  - Balanced Binary                                       - 12/10/23.
 
 
 #include <iostream>
@@ -256,11 +258,11 @@ void solution_69() {
 
 class Solution83 {
 public:
-    ListNode* deleteDuplicates(ListNode* head) {
-        ListNode* current = head;
+    ListNode *deleteDuplicates(ListNode *head) {
+        ListNode *current = head;
         while (current && current->next) {
-            if (current->val == current->next->val){
-                ListNode* duplicate = current->next;
+            if (current->val == current->next->val) {
+                ListNode *duplicate = current->next;
                 current->next = duplicate->next;
                 delete duplicate;
             } else {
@@ -272,9 +274,9 @@ public:
     }
 };
 
-void solution_83(){
+void solution_83() {
     Solution83 s;
-    ListNode* h = new ListNode(2);
+    ListNode *h = new ListNode(2);
     h->next = new ListNode(3);
     h->next->next = new ListNode(3);
     h->next->next->next = new ListNode(4);
@@ -283,8 +285,8 @@ void solution_83(){
     h->next->next->next->next->next->next = new ListNode(5);
 
     s.deleteDuplicates(h);
-    ListNode* c = h;
-    while (c != nullptr){
+    ListNode *c = h;
+    while (c != nullptr) {
         cout << c->val << " ";
         c = c->next;
     }
@@ -293,13 +295,13 @@ void solution_83(){
 
 class Solution88 {
 public:
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+    void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
         vector<int> output;
         int m_counter = 0;
         int n_counter = 0;
 
-        while (m_counter != m && n_counter != n){
-            if (nums1[m_counter] <= nums2[n_counter]){
+        while (m_counter != m && n_counter != n) {
+            if (nums1[m_counter] <= nums2[n_counter]) {
                 output.push_back(nums1[m_counter]);
                 m_counter++;
             } else {
@@ -308,12 +310,12 @@ public:
             }
         }
 
-        while (m_counter != m){
+        while (m_counter != m) {
             output.push_back(nums1[m_counter]);
             m_counter++;
         }
 
-        while (n_counter != n){
+        while (n_counter != n) {
             output.push_back(nums2[n_counter]);
             n_counter++;
         }
@@ -322,7 +324,7 @@ public:
     }
 };
 
-void solution_88(){
+void solution_88() {
     vector<int> a = {1};
     vector<int> b = {};
 
@@ -332,7 +334,7 @@ void solution_88(){
     Solution88 s;
     s.merge(a, m, b, n);
 
-    for (auto &e : a)
+    for (auto &e: a)
         cout << e << " ";
 
     cout << endl;
@@ -394,4 +396,67 @@ void solution_100() {
     Solution100 s;
     bool output = s.isSameTree(root1->right, root2->right);
     cout << "Is the trees the same? " << (output ? "true" : "false") << endl;
+}
+
+class Solution110 {
+public:
+    int getHeight(TreeNode *root) {
+        if (root == nullptr) {
+            return 0;
+        }
+
+        int leftHeight = getHeight(root->left);
+        int rightHeight = getHeight(root->right);
+        return max(leftHeight, rightHeight) + 1;
+    }
+
+    int getHeight2(TreeNode *root) {
+        if (root == nullptr) return 0;
+
+        int left = getHeight2(root->left);
+        int right = getHeight2(root->right);
+
+        if (left == -1 or right == -1 or abs(left - right) > 1) return -1;
+
+        return max(left, right) + 1;
+    }
+
+    bool isBalanced(TreeNode *root) {
+        if (root == nullptr) {
+            return true;
+        }
+
+        int leftHeight = getHeight(root->left);
+        int rightHeight = getHeight(root->right);
+
+        if (abs(leftHeight - rightHeight) <= 1 and isBalanced(root->left) and isBalanced(root->right)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    bool isBalanced2(TreeNode *root){
+        if (root == nullptr) return true;
+        if (getHeight2(root) == -1) return false;
+        return true;
+    }
+};
+
+void solution_110() {
+    Solution110 s;
+    TreeNode *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->left->left->left = new TreeNode(6);
+
+    bool varIsBalanced = s.isBalanced(root);
+
+    if (varIsBalanced) {
+        cout << "A árvore está balanceada." << endl;
+    } else {
+        cout << "A árvore não está balanceada." << endl;
+    }
 }
