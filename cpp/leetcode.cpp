@@ -12,6 +12,8 @@
 // Problem 88   - Merge Sorted Array                                    - 10/10/23.
 // Problem 100  - Same Tree                                             - 11/10/23.
 // Problem 110  - Balanced Binary                                       - 12/10/23.
+// Problem 108  - Convert Sorted Array to Binary Search Tree            - 13/10/23.
+// Problem 111  - Minimum Depth of Binary Tree                          - 14/10/23.
 
 
 #include <iostream>
@@ -436,7 +438,7 @@ public:
         return false;
     }
 
-    bool isBalanced2(TreeNode *root){
+    bool isBalanced2(TreeNode *root) {
         if (root == nullptr) return true;
         if (getHeight2(root) == -1) return false;
         return true;
@@ -459,4 +461,74 @@ void solution_110() {
     } else {
         cout << "A árvore não está balanceada." << endl;
     }
+}
+
+class Solution108 {
+public:
+    TreeNode *sortedArrayToBST(vector<int> &nums) {
+        /**
+         *  First of all, i can take the center of vector to be the root
+         *
+         *  After that, take the left side of the array and the right side of the array
+         *
+         *  Finally, do the recursive to fill the tree
+         */
+        if (nums.empty()) {
+            return nullptr;
+        }
+
+        int mid = nums.size() / 2;
+        TreeNode *root = new TreeNode(nums[mid]);
+
+        vector<int> leftSubTree(nums.begin(), nums.begin() + mid);
+        vector<int> rightSubTree(nums.begin() + mid + 1, nums.end());
+
+        root->left = sortedArrayToBST(leftSubTree);
+        root->right = sortedArrayToBST(rightSubTree);
+
+        return root;
+    }
+};
+
+void solution_108() {
+    Solution108 s;
+}
+
+class Solution111 {
+public:
+    int minDepth(TreeNode *root) {
+        if (!root) {
+            return 0;
+        }
+
+        // if the nodes are nullptr, calc the oposite side depth
+        if (!root->left) {
+            return minDepth(root->right) + 1;
+        }
+
+        if (!root->right) {
+            return minDepth(root->left) + 1;
+        }
+
+        int leftMax = minDepth(root->left);
+        int rightMax = minDepth(root->right);
+
+        return min(leftMax, rightMax) + 1;
+    }
+};
+
+void solution_111() {
+    // [2,null,3,null,4,null,5,null,6]
+    TreeNode *root = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->right->right = new TreeNode(4);
+    root->right->right->right = new TreeNode(5);
+    root->right->right->right->right = new TreeNode(6);
+
+
+    Solution111 s;
+    int output = s.minDepth(root);
+
+    cout << "Min Depht: " << output << endl;
+
 }
