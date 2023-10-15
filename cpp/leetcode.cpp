@@ -15,7 +15,6 @@
 // Problem 108  - Convert Sorted Array to Binary Search Tree            - 13/10/23.
 // Problem 111  - Minimum Depth of Binary Tree                          - 14/10/23.
 
-
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -488,6 +487,13 @@ public:
 
         return root;
     }
+    void printTree(TreeNode* root){
+        if (root){
+            printTree(root->left);
+            cout << root->val << " ";
+            printTree(root->right);
+        }
+    }
 };
 
 void solution_108() {
@@ -531,4 +537,9 @@ void solution_111() {
 
     cout << "Min Depht: " << output << endl;
 
+    vector<int> nums = {-10,-3,0,5,9};
+    vector<int> nums2 = {1, 3};
+
+    TreeNode* output = s.sortedArrayToBST(nums2);
+    s.printTree(output);
 }
