@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp
+CMAKE_SOURCE_DIR = /home/matheusperez/Desktop/verbose-eureka/cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp
+CMAKE_BINARY_DIR = /home/matheusperez/Desktop/verbose-eureka/cpp
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cpp.dir/depend.make
@@ -72,30 +72,30 @@ include CMakeFiles/cpp.dir/flags.make
 CMakeFiles/cpp.dir/main.cpp.o: CMakeFiles/cpp.dir/flags.make
 CMakeFiles/cpp.dir/main.cpp.o: main.cpp
 CMakeFiles/cpp.dir/main.cpp.o: CMakeFiles/cpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp.dir/main.cpp.o -MF CMakeFiles/cpp.dir/main.cpp.o.d -o CMakeFiles/cpp.dir/main.cpp.o -c /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matheusperez/Desktop/verbose-eureka/cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cpp.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp.dir/main.cpp.o -MF CMakeFiles/cpp.dir/main.cpp.o.d -o CMakeFiles/cpp.dir/main.cpp.o -c /home/matheusperez/Desktop/verbose-eureka/cpp/main.cpp
 
 CMakeFiles/cpp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/main.cpp > CMakeFiles/cpp.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matheusperez/Desktop/verbose-eureka/cpp/main.cpp > CMakeFiles/cpp.dir/main.cpp.i
 
 CMakeFiles/cpp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/main.cpp -o CMakeFiles/cpp.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matheusperez/Desktop/verbose-eureka/cpp/main.cpp -o CMakeFiles/cpp.dir/main.cpp.s
 
 CMakeFiles/cpp.dir/leetcode.cpp.o: CMakeFiles/cpp.dir/flags.make
 CMakeFiles/cpp.dir/leetcode.cpp.o: leetcode.cpp
 CMakeFiles/cpp.dir/leetcode.cpp.o: CMakeFiles/cpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp.dir/leetcode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp.dir/leetcode.cpp.o -MF CMakeFiles/cpp.dir/leetcode.cpp.o.d -o CMakeFiles/cpp.dir/leetcode.cpp.o -c /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/leetcode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/matheusperez/Desktop/verbose-eureka/cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cpp.dir/leetcode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cpp.dir/leetcode.cpp.o -MF CMakeFiles/cpp.dir/leetcode.cpp.o.d -o CMakeFiles/cpp.dir/leetcode.cpp.o -c /home/matheusperez/Desktop/verbose-eureka/cpp/leetcode.cpp
 
 CMakeFiles/cpp.dir/leetcode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/leetcode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/leetcode.cpp > CMakeFiles/cpp.dir/leetcode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/matheusperez/Desktop/verbose-eureka/cpp/leetcode.cpp > CMakeFiles/cpp.dir/leetcode.cpp.i
 
 CMakeFiles/cpp.dir/leetcode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/leetcode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/leetcode.cpp -o CMakeFiles/cpp.dir/leetcode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/matheusperez/Desktop/verbose-eureka/cpp/leetcode.cpp -o CMakeFiles/cpp.dir/leetcode.cpp.s
 
 # Object files for target cpp
 cpp_OBJECTS = \
@@ -109,7 +109,7 @@ cpp: CMakeFiles/cpp.dir/main.cpp.o
 cpp: CMakeFiles/cpp.dir/leetcode.cpp.o
 cpp: CMakeFiles/cpp.dir/build.make
 cpp: CMakeFiles/cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/matheusperez/Desktop/verbose-eureka/cpp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable cpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/cpp.dir/clean:
 .PHONY : CMakeFiles/cpp.dir/clean
 
 CMakeFiles/cpp.dir/depend:
-	cd /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp/CMakeFiles/cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/matheusperez/Desktop/verbose-eureka/cpp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/matheusperez/Desktop/verbose-eureka/cpp /home/matheusperez/Desktop/verbose-eureka/cpp /home/matheusperez/Desktop/verbose-eureka/cpp /home/matheusperez/Desktop/verbose-eureka/cpp /home/matheusperez/Desktop/verbose-eureka/cpp/CMakeFiles/cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cpp.dir/depend
 

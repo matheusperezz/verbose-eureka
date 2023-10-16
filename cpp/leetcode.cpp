@@ -533,13 +533,56 @@ void solution_111() {
 
 
     Solution111 s;
-    int output = s.minDepth(root);
+    int outputMinDepth = s.minDepth(root);
 
-    cout << "Min Depht: " << output << endl;
+    cout << "Min Depht: " << outputMinDepth << endl;
 
     vector<int> nums = {-10,-3,0,5,9};
     vector<int> nums2 = {1, 3};
 
-    TreeNode* output = s.sortedArrayToBST(nums2);
-    s.printTree(output);
+    // TreeNode* output = s.sortedArrayToBST(nums2);
+}
+
+class Solution112 {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        return mapRootToLeaf(root, targetSum, 0);
+    }
+
+    bool mapRootToLeaf(TreeNode* node, int targetSum, int currentSum){
+        if (node == nullptr) {
+            return false;
+        }
+
+        currentSum += node->val;
+
+        if (node->left == nullptr && node->right == nullptr) {
+            return currentSum == targetSum;
+        }
+
+        // Verifying the left and right paths
+        bool leftPath = mapRootToLeaf(node->left, targetSum, currentSum);
+        bool rightPath = mapRootToLeaf(node->right, targetSum, currentSum);
+
+        return leftPath || rightPath;
+    }
+};
+
+void solution_112(){
+    Solution112 s;
+
+    TreeNode* root = new TreeNode(5);
+    root->left = new TreeNode(4);
+    root->left->left = new TreeNode(11);
+    root->left->left->left = new TreeNode(7);
+    root->left->left->right = new TreeNode(2);
+
+    root->right = new TreeNode(8);
+    root->right->left = new TreeNode(13);
+    root->right->right = new TreeNode(4);
+    root->right->right->right = new TreeNode(1);
+
+    bool result = s.hasPathSum(root, 29);
+    cout << "The target as been find? " << (result ? "True" : "False") << endl;
+
 }
