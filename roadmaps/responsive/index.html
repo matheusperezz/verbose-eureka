@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Aprendendo responsividade</title>
+</head>
+<body>
+    <header>
+        <h1>Site test</h1>
+    </header>
+    <nav>
+        <a href="#">Página Inicial</a>
+        <a href="#">Sobre nós</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h1>Lista de Carros</h1>
+        <ul id="car-list">
+            <li>
+                <img 
+                src="https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/01-porsche-911-turbo-rt-2022-hero-track.jpg?itok=JCEypwNU" 
+                alt=""
+                data-description="Porsche 911 turbo s">
+            </li>
+
+            <li>
+                <img 
+                src="https://quatrorodas.abril.com.br/wp-content/uploads/2019/09/072b7a6f-ferrari-812-gts_01-e1568049786953.jpg?quality=70&strip=info" 
+                alt=""
+                data-description="Ferrari 812 superfast">
+            </li>
+            
+            <li>
+                <img 
+                src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/revuelto/overview_m.jpg" 
+                alt=""
+                data-description="lamborghini revuelto">
+            </li>
+            
+        </ul>
+
+        <div id="car-description">
+            Selecione um carro para ver a descrição
+        </div>
+    </div>
+
+    <div class="buttonDiv">
+        <button id="buttonModal" onclick="openModal()">Abrir Modal</button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Este é um modal simples!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
