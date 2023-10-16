@@ -14,6 +14,8 @@
 // Problem 110  - Balanced Binary                                       - 12/10/23.
 // Problem 108  - Convert Sorted Array to Binary Search Tree            - 13/10/23.
 // Problem 111  - Minimum Depth of Binary Tree                          - 14/10/23.
+// Problem 112  - Path sum                                              - 16/10/23.
+// Problem 118  - Pascal's Triangle                                     - 16/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -585,4 +587,40 @@ void solution_112(){
     bool result = s.hasPathSum(root, 29);
     cout << "The target as been find? " << (result ? "True" : "False") << endl;
 
+}
+
+class Solution118 {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> triangle;
+        for (int i = 0; i < numRows; i++){
+            vector<int> row;
+
+            if (i == 0){
+                row.push_back(1);
+            } else {
+                row.push_back(1);
+                for (int j = 1; j < i; j++){
+                    int num = triangle[i-1][j-1] + triangle[i-1][j];
+                    row.push_back(num);
+                }
+
+                row.push_back(1);
+            }
+            triangle.push_back(row);
+        }
+
+        return triangle;
+    }
+};
+
+void solution_118(){
+    Solution118 s;
+    vector<vector<int>> result = s.generate(4);
+    for (auto &i: result){
+        for (auto &j : i){
+            cout << j << " ";
+        }
+        cout << endl;
+    }
 }
