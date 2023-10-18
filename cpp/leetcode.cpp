@@ -16,6 +16,7 @@
 // Problem 111  - Minimum Depth of Binary Tree                          - 14/10/23.
 // Problem 112  - Path sum                                              - 16/10/23.
 // Problem 118  - Pascal's Triangle                                     - 16/10/23.
+// Problem 119  - Pascal's Triangle II                                  - 17/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -623,4 +624,40 @@ void solution_118(){
         }
         cout << endl;
     }
+}
+
+class Solution119 {
+public:
+    vector<int> getRow(int rowIndex) {
+
+        vector<vector<int>> triangle;
+
+        for (int i = 0; i <= rowIndex; i++){
+            vector<int> row;
+
+            if (i == 0){
+                row.push_back(1);
+            } else {
+                row.push_back(1);
+                for (int j = 1; j < i; j++){
+                    int num = triangle[i-1][j-1] + triangle[i-1][j];
+                    row.push_back(num);
+                }
+
+                row.push_back(1);
+            }
+            triangle.push_back(row);
+        }
+
+        return triangle.back();
+    }
+};
+
+void solution_119(){
+    Solution119 s;
+    vector<int> result = s.getRow(3);
+    for (auto &e : result)
+        cout << e << " ";
+
+    cout << endl;
 }

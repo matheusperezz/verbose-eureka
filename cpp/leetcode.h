@@ -21,5 +21,6 @@ void solution_110();
 void solution_111();
 void solution_112();
 void solution_118();
+void solution_119();
 
 #endif //LEETCODE_H

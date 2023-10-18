@@ -12,6 +12,6 @@ using namespace std;
  */
 
 int main() {
-    solution_118();
+    solution_119();
     return 0;
 }
