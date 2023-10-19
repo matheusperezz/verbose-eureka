@@ -17,6 +17,7 @@
 // Problem 112  - Path sum                                              - 16/10/23.
 // Problem 118  - Pascal's Triangle                                     - 16/10/23.
 // Problem 119  - Pascal's Triangle II                                  - 17/10/23.
+// Problem 121  - Best Time to Buy and Sell                             - 19/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -24,6 +25,7 @@
 #include <math.h>
 #include <bitset>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
@@ -660,4 +662,53 @@ void solution_119(){
         cout << e << " ";
 
     cout << endl;
+}
+
+class Solution121 {
+public:
+    int maxProfit(vector<int>& prices) {
+        if (prices.empty()) {
+            return 0;
+        }
+
+        int minPrice = prices[0];
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else if (price - minPrice > maxProfit) {
+                maxProfit = price - minPrice;
+            }
+        }
+
+        return maxProfit;
+    }
+
+    int maxProfit2(vector<int>& prices) {
+        int currMin = prices[0];
+        int minIndex = 0;
+        for (int i = 0; i < prices.size(); i++){
+            if (currMin > prices[i]){
+                currMin = prices[i];
+                minIndex = i;
+            }
+        }
+
+        if (minIndex == prices.size() - 1){
+            return 0;
+        }
+
+        auto currMax = max_element(prices.begin() + minIndex, prices.end());
+
+        cout << "currmax: " << *currMax << " currmin: " << currMin << endl;
+        return (*currMax - currMin);
+    }
+};
+
+void solution_121(){
+    Solution121 s;
+    vector<int> arr = {2,4,1};
+    int a = s.maxProfit(arr);
+    cout << "result: " << a << endl;
 }

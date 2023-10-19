@@ -24,18 +24,6 @@ int hashash(string value){
 }
 
 int main() {
-    // solution_119();
-    vector<string> v = {"banana", "apple", "renan", "miwis"};
-    int arr[20];
-
-    for (auto &e : v){
-        int r = hashash(e);
-        arr[r] = 2;
-    }
-
-    for (auto &c : arr)
-        cout << c << " ";
-
-    cout << endl;
+    solution_121();
     return 0;
 }
