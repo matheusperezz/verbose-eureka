@@ -18,12 +18,14 @@
 // Problem 118  - Pascal's Triangle                                     - 16/10/23.
 // Problem 119  - Pascal's Triangle II                                  - 17/10/23.
 // Problem 121  - Best Time to Buy and Sell                             - 19/10/23.
+// Problem 125  - Valid Palindrome                                      - 20/10/23.
 
 #include <iostream>
 #include <sstream>
 #include <vector>
 #include <math.h>
 #include <bitset>
+#include <cctype>
 #include <queue>
 #include <algorithm>
 
@@ -146,7 +148,7 @@ class Solution58 {
 public:
     int lengthOfLastWord(string s) {
         istringstream iss(s);
-        vector<string> words;
+        vector <string> words;
         string w;
         while (iss >> w) {
             words.push_back(w);
@@ -357,8 +359,8 @@ public:
             return false;
         }
 
-        queue<TreeNode *> q1;
-        queue<TreeNode *> q2;
+        queue < TreeNode * > q1;
+        queue < TreeNode * > q2;
 
         q1.push(p);
         q2.push(q);
@@ -492,8 +494,9 @@ public:
 
         return root;
     }
-    void printTree(TreeNode* root){
-        if (root){
+
+    void printTree(TreeNode *root) {
+        if (root) {
             printTree(root->left);
             cout << root->val << " ";
             printTree(root->right);
@@ -542,7 +545,7 @@ void solution_111() {
 
     cout << "Min Depht: " << outputMinDepth << endl;
 
-    vector<int> nums = {-10,-3,0,5,9};
+    vector<int> nums = {-10, -3, 0, 5, 9};
     vector<int> nums2 = {1, 3};
 
     // TreeNode* output = s.sortedArrayToBST(nums2);
@@ -550,11 +553,11 @@ void solution_111() {
 
 class Solution112 {
 public:
-    bool hasPathSum(TreeNode* root, int targetSum) {
+    bool hasPathSum(TreeNode *root, int targetSum) {
         return mapRootToLeaf(root, targetSum, 0);
     }
 
-    bool mapRootToLeaf(TreeNode* node, int targetSum, int currentSum){
+    bool mapRootToLeaf(TreeNode *node, int targetSum, int currentSum) {
         if (node == nullptr) {
             return false;
         }
@@ -573,10 +576,10 @@ public:
     }
 };
 
-void solution_112(){
+void solution_112() {
     Solution112 s;
 
-    TreeNode* root = new TreeNode(5);
+    TreeNode *root = new TreeNode(5);
     root->left = new TreeNode(4);
     root->left->left = new TreeNode(11);
     root->left->left->left = new TreeNode(7);
@@ -594,17 +597,17 @@ void solution_112(){
 
 class Solution118 {
 public:
-    vector<vector<int>> generate(int numRows) {
-        vector<vector<int>> triangle;
-        for (int i = 0; i < numRows; i++){
+    vector <vector<int>> generate(int numRows) {
+        vector <vector<int>> triangle;
+        for (int i = 0; i < numRows; i++) {
             vector<int> row;
 
-            if (i == 0){
+            if (i == 0) {
                 row.push_back(1);
             } else {
                 row.push_back(1);
-                for (int j = 1; j < i; j++){
-                    int num = triangle[i-1][j-1] + triangle[i-1][j];
+                for (int j = 1; j < i; j++) {
+                    int num = triangle[i - 1][j - 1] + triangle[i - 1][j];
                     row.push_back(num);
                 }
 
@@ -617,11 +620,11 @@ public:
     }
 };
 
-void solution_118(){
+void solution_118() {
     Solution118 s;
-    vector<vector<int>> result = s.generate(4);
-    for (auto &i: result){
-        for (auto &j : i){
+    vector <vector<int>> result = s.generate(4);
+    for (auto &i: result) {
+        for (auto &j: i) {
             cout << j << " ";
         }
         cout << endl;
@@ -632,17 +635,17 @@ class Solution119 {
 public:
     vector<int> getRow(int rowIndex) {
 
-        vector<vector<int>> triangle;
+        vector <vector<int>> triangle;
 
-        for (int i = 0; i <= rowIndex; i++){
+        for (int i = 0; i <= rowIndex; i++) {
             vector<int> row;
 
-            if (i == 0){
+            if (i == 0) {
                 row.push_back(1);
             } else {
                 row.push_back(1);
-                for (int j = 1; j < i; j++){
-                    int num = triangle[i-1][j-1] + triangle[i-1][j];
+                for (int j = 1; j < i; j++) {
+                    int num = triangle[i - 1][j - 1] + triangle[i - 1][j];
                     row.push_back(num);
                 }
 
@@ -655,10 +658,10 @@ public:
     }
 };
 
-void solution_119(){
+void solution_119() {
     Solution119 s;
     vector<int> result = s.getRow(3);
-    for (auto &e : result)
+    for (auto &e: result)
         cout << e << " ";
 
     cout << endl;
@@ -666,7 +669,7 @@ void solution_119(){
 
 class Solution121 {
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int> &prices) {
         if (prices.empty()) {
             return 0;
         }
@@ -674,7 +677,7 @@ public:
         int minPrice = prices[0];
         int maxProfit = 0;
 
-        for (int price : prices) {
+        for (int price: prices) {
             if (price < minPrice) {
                 minPrice = price;
             } else if (price - minPrice > maxProfit) {
@@ -685,17 +688,17 @@ public:
         return maxProfit;
     }
 
-    int maxProfit2(vector<int>& prices) {
+    int maxProfit2(vector<int> &prices) {
         int currMin = prices[0];
         int minIndex = 0;
-        for (int i = 0; i < prices.size(); i++){
-            if (currMin > prices[i]){
+        for (int i = 0; i < prices.size(); i++) {
+            if (currMin > prices[i]) {
                 currMin = prices[i];
                 minIndex = i;
             }
         }
 
-        if (minIndex == prices.size() - 1){
+        if (minIndex == prices.size() - 1) {
             return 0;
         }
 
@@ -706,9 +709,41 @@ public:
     }
 };
 
-void solution_121(){
+void solution_121() {
     Solution121 s;
-    vector<int> arr = {2,4,1};
+    vector<int> arr = {2, 4, 1};
     int a = s.maxProfit(arr);
     cout << "result: " << a << endl;
+}
+
+class Solution125 {
+public:
+    bool isPalindrome(string s) {
+        for (char &c: s) {
+            c = tolower(c);
+        }
+
+        // remove non alphanumeric chars
+        s.erase(remove_if(s.begin(), s.end(), [](char c) { return !isalnum(c); }), s.end());
+
+        int left = 0;
+        int right = s.size() - 1;
+
+        while (left < right) {
+            if (s[left] != s[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+};
+
+void solution_125() {
+    Solution125 s;
+    string test = "aA";
+    bool result = s.isPalindrome(test);
+    cout << "Is a palindrome? " << (result ? "Yes" : "No") << endl;
 }
