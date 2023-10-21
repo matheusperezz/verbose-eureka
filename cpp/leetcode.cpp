@@ -19,6 +19,7 @@
 // Problem 119  - Pascal's Triangle II                                  - 17/10/23.
 // Problem 121  - Best Time to Buy and Sell                             - 19/10/23.
 // Problem 125  - Valid Palindrome                                      - 20/10/23.
+// Problem 125  - Sinlge Number                                         - 21/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -746,4 +747,27 @@ void solution_125() {
     string test = "aA";
     bool result = s.isPalindrome(test);
     cout << "Is a palindrome? " << (result ? "Yes" : "No") << endl;
+}
+
+class Solution136 {
+public:
+    int singleNumber(vector<int>& nums) {
+        int result = 0;
+
+        for (int n: nums){
+            // result XOR n
+            // This makes the sum of unique numbers, once the number has twice appers, his subtract the value duplicated
+            // Just keeping the unique number
+            result ^= n;
+        }
+
+        return result;
+    }
+};
+
+void solution_136(){
+    Solution136 s;
+    vector<int> inputVector = {4,1,2,1,2};
+    int result = s.singleNumber(inputVector);
+    cout << "Non duplicated item: " << result << endl;
 }
