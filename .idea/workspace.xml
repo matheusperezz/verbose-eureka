@@ -6,10 +6,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5093e971-db22-4a4a-a37f-b33ce8017c5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cpp/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpp/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="5093e971-db22-4a4a-a37f-b33ce8017c5b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +37,8 @@
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/mathe/Work/verbose-eureka/cpp",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -54,7 +52,7 @@
       <updated>1697250950870</updated>
       <workItem from="1697250952104" duration="3000" />
       <workItem from="1697307342064" duration="4000" />
-      <workItem from="1697936787631" duration="118000" />
+      <workItem from="1697936787631" duration="237000" />
     </task>
     <servers />
   </component>
