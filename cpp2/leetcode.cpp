@@ -20,6 +20,7 @@
 // Problem 121  - Best Time to Buy and Sell                             - 19/10/23.
 // Problem 125  - Valid Palindrome                                      - 20/10/23.
 // Problem 125  - Sinlge Number                                         - 21/10/23.
+// Problem 141  - Linked List                                           - 22/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -770,4 +771,38 @@ void solution_136(){
     vector<int> inputVector = {4,1,2,1,2};
     int result = s.singleNumber(inputVector);
     cout << "Non duplicated item: " << result << endl;
+}
+
+class Solution141 {
+public:
+    bool hasCycle(ListNode *head) {
+        if (!head || !head->next){
+            return false;
+        }
+
+        auto* slow = head;
+        auto* fast = head;
+
+        while (fast and fast->next){
+            slow = slow->next;
+            fast = fast->next->next;
+
+            if (slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+void solution_141(){
+    auto* head = new ListNode(3);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(2);
+
+    Solution141 s;
+    bool result = s.hasCycle(head);
+    cout << "Is a Cycle?: " << (result ? "Yes" : "False") << endl;
+
 }
