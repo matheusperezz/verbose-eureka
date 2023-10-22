@@ -1,4 +1,4 @@
-Cannot generate into /home/matheusperez/Desktop/verbose-eureka/cpp
-It is already used for project /mnt/c/Users/Matheus/Documents/Code/verbose-eureka/cpp
+Cannot generate into C:\Users\mathe\Work\verbose-eureka\cpp
+It is already used for project \home\matheusperez\Desktop\verbose-eureka\cpp
 
 Please either delete it manually or select another generation directory

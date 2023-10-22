@@ -12,6 +12,10 @@ using namespace std;
  * @return
  */
 
+/*
+ * Testing push git TODO: Remove on next commit
+ */
+
 int hashash(string value){
     int hashValue = 0;
     int capacity = 10;
