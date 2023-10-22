@@ -24,6 +24,6 @@ int hashash(string value){
 }
 
 int main() {
-    solution_136();
+    cout << "Testing the cmake" << endl;
     return 0;
 }
