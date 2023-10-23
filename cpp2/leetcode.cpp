@@ -21,6 +21,7 @@
 // Problem 125  - Valid Palindrome                                      - 20/10/23.
 // Problem 125  - Sinlge Number                                         - 21/10/23.
 // Problem 141  - Linked List                                           - 22/10/23.
+// Problem 144  - Binary Tree Preorder Traversal                        - 23/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -29,6 +30,7 @@
 #include <bitset>
 #include <cctype>
 #include <queue>
+#include <stack>
 #include <algorithm>
 
 using namespace std;
@@ -150,7 +152,7 @@ class Solution58 {
 public:
     int lengthOfLastWord(string s) {
         istringstream iss(s);
-        vector <string> words;
+        vector<string> words;
         string w;
         while (iss >> w) {
             words.push_back(w);
@@ -361,8 +363,8 @@ public:
             return false;
         }
 
-        queue < TreeNode * > q1;
-        queue < TreeNode * > q2;
+        queue<TreeNode *> q1;
+        queue<TreeNode *> q2;
 
         q1.push(p);
         q2.push(q);
@@ -599,8 +601,8 @@ void solution_112() {
 
 class Solution118 {
 public:
-    vector <vector<int>> generate(int numRows) {
-        vector <vector<int>> triangle;
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> triangle;
         for (int i = 0; i < numRows; i++) {
             vector<int> row;
 
@@ -624,7 +626,7 @@ public:
 
 void solution_118() {
     Solution118 s;
-    vector <vector<int>> result = s.generate(4);
+    vector<vector<int>> result = s.generate(4);
     for (auto &i: result) {
         for (auto &j: i) {
             cout << j << " ";
@@ -637,7 +639,7 @@ class Solution119 {
 public:
     vector<int> getRow(int rowIndex) {
 
-        vector <vector<int>> triangle;
+        vector<vector<int>> triangle;
 
         for (int i = 0; i <= rowIndex; i++) {
             vector<int> row;
@@ -752,10 +754,10 @@ void solution_125() {
 
 class Solution136 {
 public:
-    int singleNumber(vector<int>& nums) {
+    int singleNumber(vector<int> &nums) {
         int result = 0;
 
-        for (int n: nums){
+        for (int n: nums) {
             // result XOR n
             // This makes the sum of unique numbers, once the number has twice appers, his subtract the value duplicated
             // Just keeping the unique number
@@ -766,9 +768,9 @@ public:
     }
 };
 
-void solution_136(){
+void solution_136() {
     Solution136 s;
-    vector<int> inputVector = {4,1,2,1,2};
+    vector<int> inputVector = {4, 1, 2, 1, 2};
     int result = s.singleNumber(inputVector);
     cout << "Non duplicated item: " << result << endl;
 }
@@ -776,18 +778,18 @@ void solution_136(){
 class Solution141 {
 public:
     bool hasCycle(ListNode *head) {
-        if (!head || !head->next){
+        if (!head || !head->next) {
             return false;
         }
 
-        auto* slow = head;
-        auto* fast = head;
+        auto *slow = head;
+        auto *fast = head;
 
-        while (fast and fast->next){
+        while (fast and fast->next) {
             slow = slow->next;
             fast = fast->next->next;
 
-            if (slow == fast){
+            if (slow == fast) {
                 return true;
             }
         }
@@ -795,8 +797,8 @@ public:
     }
 };
 
-void solution_141(){
-    auto* head = new ListNode(3);
+void solution_141() {
+    auto *head = new ListNode(3);
     head->next = new ListNode(2);
     head->next->next = new ListNode(3);
     head->next->next->next = new ListNode(2);
@@ -805,4 +807,41 @@ void solution_141(){
     bool result = s.hasCycle(head);
     cout << "Is a Cycle?: " << (result ? "Yes" : "False") << endl;
 
+}
+
+class Solution144 {
+public:
+    vector<int> preorderTraversal(TreeNode *root) {
+        vector<int> output;
+        stack<TreeNode *> nodeStack;
+        auto *current = root;
+        while (current != nullptr or !nodeStack.empty()) {
+            while (current != nullptr) {
+                nodeStack.push(current);
+                output.push_back(current->val);
+                current = current->left;
+            }
+
+            current = nodeStack.top();
+            nodeStack.pop();
+            current = current->right;
+        }
+
+        return output;
+    }
+};
+
+void solution_144() {
+    Solution144 s;
+    TreeNode *root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+
+    auto result = s.preorderTraversal(root);
+    for (int c : result){
+        cout << c << " ";
+    }
+    cout << endl;
 }
