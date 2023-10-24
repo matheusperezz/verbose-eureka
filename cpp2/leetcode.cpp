@@ -22,6 +22,7 @@
 // Problem 125  - Sinlge Number                                         - 21/10/23.
 // Problem 141  - Linked List                                           - 22/10/23.
 // Problem 144  - Binary Tree Preorder Traversal                        - 23/10/23.
+// Problem 145  - Binary Tree Postrder Traversal                        - 24/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -842,6 +843,50 @@ void solution_144() {
     auto result = s.preorderTraversal(root);
     for (int c : result){
         cout << c << " ";
+    }
+    cout << endl;
+}
+
+class Solution145 {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> output;
+        stack<TreeNode *> nodeStack;
+        TreeNode* current = root;
+        TreeNode* lastVisited = nullptr;
+
+        while (current != nullptr or !nodeStack.empty()) {
+            if (current != nullptr){
+                nodeStack.push(current);
+                current = current->left;
+            } else {
+                TreeNode *peekNode = nodeStack.top();
+                if (peekNode->right != nullptr and lastVisited != peekNode->right){
+                    // If the right node is not visited, visit!
+                    current = peekNode->right;
+                } else {
+                    // Else, visited the current node
+                    output.push_back(peekNode->val);
+                    lastVisited = peekNode;
+                    nodeStack.pop();
+                }
+            }
+        }
+
+        return output;
+    }
+};
+
+void solution_145(){
+    Solution145 s;
+
+    TreeNode *root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    root->right->left = new TreeNode(3);
+
+    auto result = s.postorderTraversal(root);
+    for (int r: result){
+        cout << r << " ";
     }
     cout << endl;
 }
