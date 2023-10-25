@@ -23,6 +23,7 @@
 // Problem 141  - Linked List                                           - 22/10/23.
 // Problem 144  - Binary Tree Preorder Traversal                        - 23/10/23.
 // Problem 145  - Binary Tree Postrder Traversal                        - 24/10/23.
+// Problem 160  - Intersection of Two Linked Lists                      - 25/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -841,7 +842,7 @@ void solution_144() {
     root->left->right = new TreeNode(5);
 
     auto result = s.preorderTraversal(root);
-    for (int c : result){
+    for (int c: result) {
         cout << c << " ";
     }
     cout << endl;
@@ -849,19 +850,19 @@ void solution_144() {
 
 class Solution145 {
 public:
-    vector<int> postorderTraversal(TreeNode* root) {
+    vector<int> postorderTraversal(TreeNode *root) {
         vector<int> output;
         stack<TreeNode *> nodeStack;
-        TreeNode* current = root;
-        TreeNode* lastVisited = nullptr;
+        TreeNode *current = root;
+        TreeNode *lastVisited = nullptr;
 
         while (current != nullptr or !nodeStack.empty()) {
-            if (current != nullptr){
+            if (current != nullptr) {
                 nodeStack.push(current);
                 current = current->left;
             } else {
                 TreeNode *peekNode = nodeStack.top();
-                if (peekNode->right != nullptr and lastVisited != peekNode->right){
+                if (peekNode->right != nullptr and lastVisited != peekNode->right) {
                     // If the right node is not visited, visit!
                     current = peekNode->right;
                 } else {
@@ -877,7 +878,7 @@ public:
     }
 };
 
-void solution_145(){
+void solution_145() {
     Solution145 s;
 
     TreeNode *root = new TreeNode(1);
@@ -885,8 +886,71 @@ void solution_145(){
     root->right->left = new TreeNode(3);
 
     auto result = s.postorderTraversal(root);
-    for (int r: result){
+    for (int r: result) {
         cout << r << " ";
     }
     cout << endl;
 }
+
+class Solution160 {
+private:
+    int getLength(ListNode *head) {
+        int length = 0;
+        while (head) {
+            length++;
+            head = head->next;
+        }
+        return length;
+    }
+
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        int lenA = getLength(headA);
+        int lenB = getLength(headB);
+
+        // make the two lists on the same size
+        while (lenA > lenB) {
+            headA = headA->next;
+            lenA--;
+        }
+
+        while (lenB > lenA) {
+            headB = headB->next;
+            lenB--;
+        }
+
+        while (headA && headB) {
+            if (headA == headB) {
+                return headA;
+            }
+            headA = headA->next;
+            headB = headB->next;
+        }
+
+        return nullptr; // No intersection
+    }
+};
+
+void solution_160() {
+    Solution160 s;
+
+    // ListA
+    auto *headA = new ListNode(4);
+    headA->next = new ListNode(1);
+    headA->next->next = new ListNode(8);
+    headA->next->next->next = new ListNode(4);
+    headA->next->next->next->next = new ListNode(5);
+
+    // ListB
+    auto *headB = new ListNode(5);
+    headB->next = new ListNode(6);
+    headB->next->next = new ListNode(1);
+    headB->next->next->next = new ListNode(8);
+    headB->next->next->next->next = new ListNode(4);
+    headB->next->next->next->next->next = new ListNode(5);
+
+    auto result = s.getIntersectionNode(headA, headB);
+    cout << "Result = " << result->val << endl;
+
+}
+

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "leetcode.h"
+#include <string>
 
 using namespace std;
 
@@ -24,6 +25,6 @@ int hashash(string value){
 }
 
 int main() {
-    solution_145();
+    solution_160();
     return 0;
 }
