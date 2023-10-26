@@ -24,6 +24,7 @@
 // Problem 144  - Binary Tree Preorder Traversal                        - 23/10/23.
 // Problem 145  - Binary Tree Postrder Traversal                        - 24/10/23.
 // Problem 160  - Intersection of Two Linked Lists                      - 25/10/23.
+// Problem 168  - Excel Sheet Column Title                              - 25/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -34,6 +35,7 @@
 #include <queue>
 #include <stack>
 #include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
@@ -954,3 +956,21 @@ void solution_160() {
 
 }
 
+class Solution168 {
+public:
+    string convertToTitle(int columnNumber) {
+        string result;
+        while (columnNumber > 0) {
+            int rem = (columnNumber - 1) % 26;
+            result = char('A' + rem) + result;
+            columnNumber = (columnNumber - 1) / 26;
+        }
+        return result;
+    }
+};
+
+void solution_168() {
+    Solution168 s;
+    string result = s.convertToTitle(4208);
+    cout << "Result: " << result << endl;
+}
