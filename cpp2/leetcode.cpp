@@ -1,3 +1,4 @@
+
 //
 // Created by Matheus on 04/10/2023.
 //
@@ -25,6 +26,7 @@
 // Problem 145  - Binary Tree Postrder Traversal                        - 24/10/23.
 // Problem 160  - Intersection of Two Linked Lists                      - 25/10/23.
 // Problem 168  - Excel Sheet Column Title                              - 25/10/23.
+// Problem 169  - Majority Element                                      - 26/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -35,6 +37,7 @@
 #include <queue>
 #include <stack>
 #include <algorithm>
+#include <utility>
 #include <unordered_map>
 
 using namespace std;
@@ -973,4 +976,35 @@ void solution_168() {
     Solution168 s;
     string result = s.convertToTitle(4208);
     cout << "Result: " << result << endl;
+}
+
+class Solution169 {
+public:
+    // 3, 2, 3
+    int majorityElement(vector<int> &nums) {
+        unordered_map<int, int> count;
+        int majority = -1;
+        int maxCount = 0;
+
+        for (const int num : nums) {
+            count[num]++;
+            if (count[num] > maxCount) {
+                maxCount = count[num];
+                majority = num;
+            }
+        }
+
+        if (maxCount > nums.size() / 2) {
+            return majority;
+        } else {
+            return -1;
+        }
+    }
+};
+
+void solution_169() {
+    Solution169 s;
+    vector<int> v = {3,2,3};
+    auto output = s.majorityElement(v);
+    cout << "Output: " << output << endl;
 }
