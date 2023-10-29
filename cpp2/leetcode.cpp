@@ -27,6 +27,7 @@
 // Problem 160  - Intersection of Two Linked Lists                      - 25/10/23.
 // Problem 168  - Excel Sheet Column Title                              - 25/10/23.
 // Problem 169  - Majority Element                                      - 26/10/23.
+// Problem 171  - Excel Sheet Column Number                             - 29/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -1007,4 +1008,29 @@ void solution_169() {
     vector<int> v = {3,2,3};
     auto output = s.majorityElement(v);
     cout << "Output: " << output << endl;
+}
+
+class Solution171 {
+public:
+    int titleToNumber(string columnTitle) {
+        // Basically a number format with 26base
+        int result = 0;
+        int multiplier = 1;
+
+        for (int i = columnTitle.size() - 1; i >= 0; --i) {
+            // ASCII Table operation
+            int value = columnTitle[i] - 'A' + 1;
+            cout << "Columntitle[i] " << columnTitle[i] << "  -  (A+1) " << ('A' + 1) << " Result: " << value << endl;
+            result += value * multiplier;
+            multiplier *= 26;
+        }
+        return result;
+    }
+};
+
+void solution_171(){
+    Solution171 s;
+    string input = "AB";
+    int output = s.titleToNumber(input);
+    cout << "result is: " << output << endl;
 }
