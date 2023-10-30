@@ -28,6 +28,7 @@
 // Problem 168  - Excel Sheet Column Title                              - 25/10/23.
 // Problem 169  - Majority Element                                      - 26/10/23.
 // Problem 171  - Excel Sheet Column Number                             - 29/10/23.
+// Problem 190  - Reverse Bits                                          - 29/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -40,6 +41,7 @@
 #include <algorithm>
 #include <utility>
 #include <unordered_map>
+#include <cstdint>
 
 using namespace std;
 
@@ -1033,4 +1035,61 @@ void solution_171(){
     string input = "AB";
     int output = s.titleToNumber(input);
     cout << "result is: " << output << endl;
+}
+
+class Solution190 {
+private:
+    unordered_map<char, int> nums;
+public:
+    Solution190(){
+        nums['0'] = 0;
+        nums['1'] = 1;
+        nums['2'] = 2;
+        nums['3'] = 3;
+        nums['4'] = 4;
+        nums['5'] = 5;
+        nums['6'] = 6;
+        nums['7'] = 7;
+        nums['8'] = 8;
+        nums['9'] = 9;
+    }
+
+    uint32_t reverseBits(uint32_t n){
+        uint32_t result = 0;
+        int bitPosition = 31; // Starting at the leftter (?) bit position
+
+        while (n > 0) {
+            uint32_t bit = n & 1; // get the less significant bit
+            result |= (bit << bitPosition); // Define the correspondent bit on operation
+            n >>= 1; // Change the bit to the right
+            bitPosition--;
+        }
+
+        return result;
+    }
+
+    uint32_t reverseBits2(uint32_t n) {
+        uint32_t result = 0;
+        // Convert to Binary
+        auto bit_string = bitset<32>(n).to_string();
+        // Invert the bits
+        string inverted_bits;
+        for(int i = bit_string.size() - 1; i >= 0; i--){
+            inverted_bits += bit_string[i];
+        }
+        // Converto to decimal
+        int controller = 0;
+        for (int j = 0; j < inverted_bits.size(); j++){
+            result += nums[inverted_bits[j]] * pow(2, j);
+        }
+        // Return
+        return result;
+    }
+};
+
+void solution_190(){
+    Solution190 s;
+    uint32_t input = 964176192;
+    auto result = s.reverseBits(input);
+    cout << "result: " << result << endl;
 }

@@ -25,6 +25,6 @@ int hashash(string value){
 }
 
 int main() {
-    solution_171();
+    solution_190();
     return 0;
 }
