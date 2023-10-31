@@ -29,6 +29,7 @@
 // Problem 169  - Majority Element                                      - 26/10/23.
 // Problem 171  - Excel Sheet Column Number                             - 29/10/23.
 // Problem 190  - Reverse Bits                                          - 29/10/23.
+// Problem 190  - Number of 1 Bits                                      - 30/10/23.
 
 #include <iostream>
 #include <sstream>
@@ -989,7 +990,7 @@ public:
         int majority = -1;
         int maxCount = 0;
 
-        for (const int num : nums) {
+        for (const int num: nums) {
             count[num]++;
             if (count[num] > maxCount) {
                 maxCount = count[num];
@@ -1007,7 +1008,7 @@ public:
 
 void solution_169() {
     Solution169 s;
-    vector<int> v = {3,2,3};
+    vector<int> v = {3, 2, 3};
     auto output = s.majorityElement(v);
     cout << "Output: " << output << endl;
 }
@@ -1030,7 +1031,7 @@ public:
     }
 };
 
-void solution_171(){
+void solution_171() {
     Solution171 s;
     string input = "AB";
     int output = s.titleToNumber(input);
@@ -1041,7 +1042,7 @@ class Solution190 {
 private:
     unordered_map<char, int> nums;
 public:
-    Solution190(){
+    Solution190() {
         nums['0'] = 0;
         nums['1'] = 1;
         nums['2'] = 2;
@@ -1054,7 +1055,7 @@ public:
         nums['9'] = 9;
     }
 
-    uint32_t reverseBits(uint32_t n){
+    uint32_t reverseBits(uint32_t n) {
         uint32_t result = 0;
         int bitPosition = 31; // Starting at the leftter (?) bit position
 
@@ -1074,12 +1075,12 @@ public:
         auto bit_string = bitset<32>(n).to_string();
         // Invert the bits
         string inverted_bits;
-        for(int i = bit_string.size() - 1; i >= 0; i--){
+        for (int i = bit_string.size() - 1; i >= 0; i--) {
             inverted_bits += bit_string[i];
         }
         // Converto to decimal
         int controller = 0;
-        for (int j = 0; j < inverted_bits.size(); j++){
+        for (int j = 0; j < inverted_bits.size(); j++) {
             result += nums[inverted_bits[j]] * pow(2, j);
         }
         // Return
@@ -1087,9 +1088,30 @@ public:
     }
 };
 
-void solution_190(){
+void solution_190() {
     Solution190 s;
     uint32_t input = 964176192;
     auto result = s.reverseBits(input);
     cout << "result: " << result << endl;
+}
+
+class Solution191 {
+public:
+    int hammingWeight(uint32_t n) {
+        int result = 0;
+        for (int bitPos = 0; bitPos < 32; ++bitPos){
+            uint32_t mask = 1 << bitPos;
+            if ((n & mask) != 0){
+                result++;
+            }
+        }
+        return result;
+    }
+};
+
+void solution_191() {
+    Solution191 s;
+    uint32_t input = 11;
+    int output = s.hammingWeight(input);
+    cout << "Result: " << output << endl;
 }

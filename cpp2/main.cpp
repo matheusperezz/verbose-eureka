@@ -25,6 +25,25 @@ int hashash(string value){
 }
 
 int main() {
-    solution_190();
-    return 0;
+
+    const int size = 3;
+
+    int matriz1[size][size] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+    int matriz2[size][size] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+    int matrizResultado[size][size] = {{0}};
+
+    for (int i = 0; i < size; i++){
+        for (int j = 0; j < size; j++){
+            for (int k = 0; k < size; k++){
+                matrizResultado[i][j] += matriz1[i][k] * matriz2[k][j];
+            }
+        }
+    }
+
+    for (int i = 0; i < size; i++){
+        for (int j = 0; j < size; j++){
+            cout << matrizResultado[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
