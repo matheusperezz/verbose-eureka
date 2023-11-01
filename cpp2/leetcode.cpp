@@ -30,6 +30,7 @@
 // Problem 171  - Excel Sheet Column Number                             - 29/10/23.
 // Problem 190  - Reverse Bits                                          - 29/10/23.
 // Problem 190  - Number of 1 Bits                                      - 30/10/23.
+// Problem 202  - Happy Number                                          - 01/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -43,6 +44,7 @@
 #include <utility>
 #include <unordered_map>
 #include <cstdint>
+#include <unordered_set>
 
 using namespace std;
 
@@ -1114,4 +1116,32 @@ void solution_191() {
     uint32_t input = 11;
     int output = s.hammingWeight(input);
     cout << "Result: " << output << endl;
+}
+
+class Solution202 {
+public:
+    bool isHappy(int n) {
+        unordered_set<int> seen;
+        while (n != 1){
+            if (seen.find(n) != seen.end()){
+                return false; // Detected a cycle, so it's not a happy number
+            }
+
+            seen.insert(n);
+            int sum = 0;
+            while (n > 0){
+                int digit = n % 10;
+                sum += digit * digit;
+                n /= 10;
+            }
+            n = sum;
+        }
+        return true; // If n reaches 1, it's a happy number
+    }
+};
+
+void solution_202(){
+    Solution202 s;
+    bool result = s.isHappy(2);
+    cout << "Is a happy number? " << (result ? "Yes" : "No") << endl;
 }

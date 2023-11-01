@@ -24,8 +24,7 @@ int hashash(string value){
     return hashValue;
 }
 
-int main() {
-
+void multiply_matrices(){
     const int size = 3;
 
     int matriz1[size][size] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
@@ -46,4 +45,9 @@ int main() {
         }
         cout << endl;
     }
+}
+
+int main() {
+    solution_202();
+    return 0;
 }
