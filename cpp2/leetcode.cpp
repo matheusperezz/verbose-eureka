@@ -31,6 +31,7 @@
 // Problem 190  - Reverse Bits                                          - 29/10/23.
 // Problem 190  - Number of 1 Bits                                      - 30/10/23.
 // Problem 202  - Happy Number                                          - 01/11/23.
+// Problem 203  - Remove Linked List Elements                           - 02/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1101,9 +1102,9 @@ class Solution191 {
 public:
     int hammingWeight(uint32_t n) {
         int result = 0;
-        for (int bitPos = 0; bitPos < 32; ++bitPos){
+        for (int bitPos = 0; bitPos < 32; ++bitPos) {
             uint32_t mask = 1 << bitPos;
-            if ((n & mask) != 0){
+            if ((n & mask) != 0) {
                 result++;
             }
         }
@@ -1122,14 +1123,14 @@ class Solution202 {
 public:
     bool isHappy(int n) {
         unordered_set<int> seen;
-        while (n != 1){
-            if (seen.find(n) != seen.end()){
+        while (n != 1) {
+            if (seen.find(n) != seen.end()) {
                 return false; // Detected a cycle, so it's not a happy number
             }
 
             seen.insert(n);
             int sum = 0;
-            while (n > 0){
+            while (n > 0) {
                 int digit = n % 10;
                 sum += digit * digit;
                 n /= 10;
@@ -1140,8 +1141,54 @@ public:
     }
 };
 
-void solution_202(){
+void solution_202() {
     Solution202 s;
     bool result = s.isHappy(2);
     cout << "Is a happy number? " << (result ? "Yes" : "No") << endl;
+}
+
+class Solution203 {
+public:
+    ListNode *removeElements(ListNode *head, int val) {
+        ListNode dummy(0);
+        dummy.next = head;
+        ListNode *prev = &dummy;
+        auto current = head;
+        while (current) {
+            if (current->val == val) {
+                auto temp = current;
+                prev->next = current->next;
+                current = current->next;
+                delete temp;
+            } else {
+                prev = current;
+                current = current->next;
+            }
+        }
+        return dummy.next;
+    }
+};
+
+void solution_203() {
+    Solution203 s;
+    /*
+        Input: head = [1,2,6,3,4,5,6], val = 6
+        Output: [1,2,3,4,5]
+     */
+    int val = 6;
+    ListNode *head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(6);
+    head->next->next->next = new ListNode(3);
+    head->next->next->next->next = new ListNode(4);
+    head->next->next->next->next->next = new ListNode(5);
+    head->next->next->next->next->next->next = new ListNode(6);
+
+    ListNode *output = s.removeElements(head, val);
+    auto current = output;
+    while (current) {
+        cout << current->val << " ";
+        current = current->next;
+    }
+    cout << endl;
 }
