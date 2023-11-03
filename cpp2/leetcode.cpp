@@ -32,6 +32,7 @@
 // Problem 190  - Number of 1 Bits                                      - 30/10/23.
 // Problem 202  - Happy Number                                          - 01/11/23.
 // Problem 203  - Remove Linked List Elements                           - 02/11/23.
+// Problem 205  - Isomorphic Strings                                    - 03/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1191,4 +1192,41 @@ void solution_203() {
         current = current->next;
     }
     cout << endl;
+}
+
+class Solution205 {
+public:
+    bool isIsomorphic(string s, string t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        std::unordered_map<char, char> sToT;
+        std::unordered_map<char, char> tToS;
+
+        for (int i = 0; i < s.length(); i++) {
+            char charS = s[i];
+            char charT = t[i];
+
+            // Verificar o mapeamento de s para t
+            if (sToT.find(charS) == sToT.end()) {
+                sToT[charS] = charT;
+            } else if (sToT[charS] != charT) {
+                return false;
+            }
+
+            // Verificar o mapeamento de t para s
+            if (tToS.find(charT) == tToS.end()) {
+                tToS[charT] = charS;
+            } else if (tToS[charT] != charS) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
+
+void solution_205() {
+
 }
