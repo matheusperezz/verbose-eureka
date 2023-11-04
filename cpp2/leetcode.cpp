@@ -33,6 +33,7 @@
 // Problem 202  - Happy Number                                          - 01/11/23.
 // Problem 203  - Remove Linked List Elements                           - 02/11/23.
 // Problem 205  - Isomorphic Strings                                    - 03/11/23.
+// Problem 206  - Reversed Linked List                                  - 03/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1229,4 +1230,38 @@ public:
 
 void solution_205() {
 
+}
+
+class Solution206 {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev = nullptr;
+        ListNode* current = head;
+        while (current){
+            ListNode* next_node = current->next;
+            current->next = prev;
+            prev = current;
+            current = next_node;
+        }
+        return prev;
+    }
+};
+
+void solution_206(){
+    Solution206 s;
+    ListNode *head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(6);
+    head->next->next->next = new ListNode(3);
+    head->next->next->next->next = new ListNode(4);
+    head->next->next->next->next->next = new ListNode(5);
+    head->next->next->next->next->next->next = new ListNode(6);
+
+    ListNode* output = s.reverseList(head);
+    auto current = output;
+    while (current) {
+        cout << current->val << " ";
+        current = current->next;
+    }
+    cout << endl;
 }
