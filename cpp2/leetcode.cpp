@@ -34,6 +34,7 @@
 // Problem 203  - Remove Linked List Elements                           - 02/11/23.
 // Problem 205  - Isomorphic Strings                                    - 03/11/23.
 // Problem 206  - Reversed Linked List                                  - 03/11/23.
+// Problem 217  - Contains Duplicate                                    - 04/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1264,4 +1265,26 @@ void solution_206(){
         current = current->next;
     }
     cout << endl;
+}
+
+class Solution217 {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> seen;
+        for (const int n: nums){
+            if (seen.find(n) != seen.end()){
+                return true;
+            } else {
+                seen.insert(n);
+            }
+        }
+        return false;
+    }
+};
+
+void solution_217(){
+    Solution217 s;
+    vector<int> v = {1,2,3,4,5,6,7,1,8,9};
+    bool output = s.containsDuplicate(v);
+    cout << "Contains duplicate ? " << (output ? "yes" : "no") << endl;
 }
