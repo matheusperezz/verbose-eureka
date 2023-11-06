@@ -48,6 +48,6 @@ void multiply_matrices(){
 }
 
 int main() {
-    solution_219();
+    solution_222();
     return 0;
 }

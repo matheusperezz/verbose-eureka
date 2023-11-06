@@ -36,6 +36,7 @@
 // Problem 206  - Reversed Linked List                                  - 03/11/23.
 // Problem 217  - Contains Duplicate                                    - 04/11/23.
 // Problem 217  - Contains Duplicate II                                 - 05/11/23.
+// Problem 222  - Count Complete Tree Nodes                             - 06/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1315,4 +1316,41 @@ void solution_219() {
     int k = 2;
     bool output = s.containsNearbyDuplicate(v, k);
     cout << "Contains nearby duplicates? " << (output ? "Yes":"No") << endl;
+}
+
+class Solution222 {
+public:
+    int countNodes(TreeNode* root) {
+        int output = 0;
+        stack<TreeNode *> nodeStack;
+        auto *current = root;
+        while (current != nullptr or !nodeStack.empty()) {
+            while (current != nullptr) {
+                nodeStack.push(current);
+                output++;
+                current = current->left;
+            }
+
+            current = nodeStack.top();
+            nodeStack.pop();
+            current = current->right;
+        }
+
+        return output;
+    }
+};
+
+void solution_222(){
+    auto* root = new TreeNode(1);
+
+    root->left = new TreeNode(2);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+
+    root->right = new TreeNode(3);
+    root->right->left = new TreeNode(6);
+
+    Solution222 s;
+    int result = s.countNodes(root);
+    cout << "Size of tree: " << result << endl;
 }

@@ -40,5 +40,6 @@ void solution_205();
 void solution_206();
 void solution_217();
 void solution_219();
+void solution_222();
 
 #endif //LEETCODE_H
