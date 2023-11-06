@@ -35,6 +35,7 @@
 // Problem 205  - Isomorphic Strings                                    - 03/11/23.
 // Problem 206  - Reversed Linked List                                  - 03/11/23.
 // Problem 217  - Contains Duplicate                                    - 04/11/23.
+// Problem 217  - Contains Duplicate II                                 - 05/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1235,11 +1236,11 @@ void solution_205() {
 
 class Solution206 {
 public:
-    ListNode* reverseList(ListNode* head) {
-        ListNode* prev = nullptr;
-        ListNode* current = head;
-        while (current){
-            ListNode* next_node = current->next;
+    ListNode *reverseList(ListNode *head) {
+        ListNode *prev = nullptr;
+        ListNode *current = head;
+        while (current) {
+            ListNode *next_node = current->next;
             current->next = prev;
             prev = current;
             current = next_node;
@@ -1248,7 +1249,7 @@ public:
     }
 };
 
-void solution_206(){
+void solution_206() {
     Solution206 s;
     ListNode *head = new ListNode(1);
     head->next = new ListNode(2);
@@ -1258,7 +1259,7 @@ void solution_206(){
     head->next->next->next->next->next = new ListNode(5);
     head->next->next->next->next->next->next = new ListNode(6);
 
-    ListNode* output = s.reverseList(head);
+    ListNode *output = s.reverseList(head);
     auto current = output;
     while (current) {
         cout << current->val << " ";
@@ -1269,10 +1270,10 @@ void solution_206(){
 
 class Solution217 {
 public:
-    bool containsDuplicate(vector<int>& nums) {
+    bool containsDuplicate(vector<int> &nums) {
         unordered_set<int> seen;
-        for (const int n: nums){
-            if (seen.find(n) != seen.end()){
+        for (const int n: nums) {
+            if (seen.find(n) != seen.end()) {
                 return true;
             } else {
                 seen.insert(n);
@@ -1282,9 +1283,36 @@ public:
     }
 };
 
-void solution_217(){
+void solution_217() {
     Solution217 s;
-    vector<int> v = {1,2,3,4,5,6,7,1,8,9};
+    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 1, 8, 9};
     bool output = s.containsDuplicate(v);
     cout << "Contains duplicate ? " << (output ? "yes" : "no") << endl;
+}
+
+class Solution219 {
+public:
+    bool containsNearbyDuplicate(vector<int> &nums, int k) {
+        unordered_map<int, int> elementIndexMap;
+
+        for (int i = 0; i < nums.size(); i++) {
+            if (elementIndexMap.find(nums[i]) != elementIndexMap.end()) {
+                int prevIndex = elementIndexMap[nums[i]];
+                if (abs(i - prevIndex) <= k) {
+                    return true;
+                }
+            }
+            elementIndexMap[nums[i]] = i;
+        }
+
+        return false;
+    }
+};
+
+void solution_219() {
+    Solution219 s;
+    vector<int> v = {1,2,3,1,2,3};
+    int k = 2;
+    bool output = s.containsNearbyDuplicate(v, k);
+    cout << "Contains nearby duplicates? " << (output ? "Yes":"No") << endl;
 }
