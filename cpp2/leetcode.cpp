@@ -37,6 +37,7 @@
 // Problem 217  - Contains Duplicate                                    - 04/11/23.
 // Problem 217  - Contains Duplicate II                                 - 05/11/23.
 // Problem 222  - Count Complete Tree Nodes                             - 06/11/23.
+// Problem 226  - Invert Binary Trees                                   - 08/11/23.
 
 #include <iostream>
 #include <sstream>
@@ -1353,4 +1354,25 @@ void solution_222(){
     Solution222 s;
     int result = s.countNodes(root);
     cout << "Size of tree: " << result << endl;
+}
+
+class Solution226 {
+public:
+    TreeNode* invertTree(TreeNode* root) {
+        if (!root){
+            return nullptr;
+        }
+        TreeNode* aux = root->left;
+        root->left = root->right;
+        root->right = aux;
+
+        root->left = invertTree(root->left);
+        root->right = invertTree(root->right);
+
+        return root;
+    }
+};
+
+void solution_226(){
+
 }
