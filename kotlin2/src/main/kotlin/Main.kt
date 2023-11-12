@@ -1,10 +1,8 @@
-import data.DoubleLinkedList
-import data.LinkedList
+import leetcode.Solution225
 
 fun main() {
-    val linkedList = DoubleLinkedList<Int>()
-
-    linkedList.append(3)
-    linkedList.append(5)
-    linkedList.findPreviousValue(5)
+    val stack = Solution225()
+    stack.push(2)
+    stack.push(3)
+    println(stack.top())
 }
