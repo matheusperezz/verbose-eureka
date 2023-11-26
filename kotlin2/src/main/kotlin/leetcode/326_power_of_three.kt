@@ -1,7 +1,5 @@
 package leetcode
 
-import kotlin.math.ln
-import kotlin.math.log
 import kotlin.math.log10
 
 class Solution326 {
