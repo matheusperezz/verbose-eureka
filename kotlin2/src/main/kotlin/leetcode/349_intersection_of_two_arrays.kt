@@ -10,6 +10,21 @@ class Solution349 {
         }
         return s.distinct().toIntArray()
     }
+
+    fun intersection2(nums1: IntArray, nums2: IntArray): IntArray {
+        val set1 = nums1.toSet()
+        val set2 = nums2.toSet()
+
+        return (set1 intersect set2).toIntArray()
+    }
+
+    // Best performance
+    fun intersection3(nums1: IntArray, nums2: IntArray): IntArray {
+        val set1 = HashSet(nums1.asList())
+        val set2 = HashSet(nums2.asList())
+
+        return set1.retainAll(set2).let { set1.toIntArray() }
+    }
 }
 
 fun main(){
