@@ -23,9 +23,9 @@ class Solution374 {
             val mid = left + (right - left) / 2
             val result = guess(mid)
 
-            when {
-                result == 0 -> return mid
-                result == -1 -> right = mid - 1
+            when (result) {
+                0 -> return mid
+                -1 -> right = mid - 1
                 else -> left = mid + 1
             }
         }
