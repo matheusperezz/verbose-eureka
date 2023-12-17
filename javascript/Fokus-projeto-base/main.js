@@ -5,6 +5,10 @@ const longoBt = document.querySelector('.app__card-button--longo');
 const banner = document.querySelector('.app__image');
 const titulo = document.querySelector('.app__title');
 const botoes = document.querySelectorAll('.app__card-button')
+const startPauseBt = document.querySelector('#start-pause');
+
+let tempoDecorridoEmSegundos = 5;
+let intervaloId = null
 
 focoBt.addEventListener('click', () => {
     alterarContexto('foco');
@@ -50,4 +54,28 @@ function alterarContexto(contexto) {
             break;
     }
 
+}
+
+const contagemRegressiva = () => {
+    if (tempoDecorridoEmSegundos <= 0){
+        zerar();
+        alert('Tempo finalizado');
+        return;
+    }
+    tempoDecorridoEmSegundos -= 1;
+    console.log(`Temporizador: ${tempoDecorridoEmSegundos}`);
+}
+
+startPauseBt.addEventListener('click', iniciar);
+
+function iniciar(){
+    if (intervaloId){
+        zerar()
+    }
+    intervaloId = setInterval(contagemRegressiva, 1000);
+}
+
+function zerar() {
+    clearInterval(intervaloId);
+    intervaloId = null;
 }
