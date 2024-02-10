@@ -27,4 +27,41 @@ impl Solution {
         }
         vec![]
     }
+
+    /* Challenge 9 - Palindrome number */
+    pub fn is_palindrome(x: i32) -> bool {
+        if x < 0 {
+            return false
+        }
+
+        let sx = x.to_string();
+        let mut left = 0;
+        let mut right = sx.len() - 1;
+        while left != right {
+            if sx.chars().nth(left) != sx.chars().nth(right) {
+                return false;
+            }
+            left += 1;
+            if right == 0 {
+                return true;
+            }
+            right -= 1;
+        }
+        true
+    }
+    pub fn is_palindrome_performance(x: i32) -> bool {
+        if x < 0 || (x % 10 == 0 && x != 0) {
+            return false;
+        }
+
+        let mut num = x;
+        let mut reversed = 0;
+
+        while num > reversed {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+
+        num == reversed || num == reversed / 10
+    }
 }
