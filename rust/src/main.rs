@@ -1,9 +1,8 @@
 mod solutions;
-use solutions::Solution;
+use solutions::Solution14;
 
 fn main() {
-    let nums = vec![3,2,4];
-    let target = 6;
-    let result = Solution::two_sum(nums, target);
+    let strs  = vec!["flower".to_string(),"flow".to_string(),"flight".to_string()];
+    let result = Solution14::longest_common_prefix(strs);
     println!("{:?}", result);
 }

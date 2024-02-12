@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 
 pub(crate) struct Solution;
+pub(crate) struct Solution14;
 
 impl Solution {
     /* Challenge 1 - Two Sum, with two results*/
@@ -63,5 +64,17 @@ impl Solution {
         }
 
         num == reversed || num == reversed / 10
+    }
+}
+
+impl Solution14 {
+    pub fn longest_common_prefix(strs: Vec<String>) -> String {
+        let mut short = strs.clone().into_iter().min_by_key(|s| s.len()).unwrap_or("".to_string());
+        for item in strs {
+            while !item.starts_with(&short) {
+                short.pop();
+            }
+        }
+        short
     }
 }
