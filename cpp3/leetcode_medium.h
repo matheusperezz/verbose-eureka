@@ -6,5 +6,6 @@
 #define LEETCODE_MEDIUM_H
 
 int testFunctionMediumLeetCode();
+void solution_24();
 
 #endif //LEETCODE_MEDIUM_H

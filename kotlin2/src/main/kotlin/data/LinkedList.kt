@@ -1,14 +1,18 @@
 package data
 
-class ListNode<T>(val data: T, var next: ListNode<T>? = null)
+class LinkedListNode<T>(val data: T, var next: LinkedListNode<T>? = null)
+
+class ListNode(var `val`: Int) {
+    var next: ListNode? = null
+}
 
 class LinkedList<T> {
-    var head: ListNode<T>? = null
+    var head: LinkedListNode<T>? = null
 
     fun append(data: T){
-        val newListNode = ListNode(data)
+        val newLinkedListNode = LinkedListNode(data)
         if (head == null){
-            head = newListNode
+            head = newLinkedListNode
             return
         }
 
@@ -16,7 +20,7 @@ class LinkedList<T> {
         while (current?.next != null){
             current = current.next
         }
-        current?.next = newListNode
+        current?.next = newLinkedListNode
     }
 
     fun display(){
