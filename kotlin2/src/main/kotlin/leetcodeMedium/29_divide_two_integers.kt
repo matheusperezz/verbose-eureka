@@ -1,5 +1,7 @@
 package leetcodeMedium
 
+import kotlin.math.abs
+
 class Solution29 {
     fun divide(dividend: Int, divisor: Int): Int {
         if (dividend == Int.MIN_VALUE && divisor == -1) {
@@ -15,8 +17,8 @@ class Solution29 {
 
         val sign = dividend >= 0 == divisor >= 0
 
-        var dividendT = Math.abs(dividend)
-        var divisorT = Math.abs(divisor)
+        var dividendT = abs(dividend)
+        val divisorT = abs(divisor)
         var result = 0
         while (dividendT - divisorT >= 0) {
             var count = 0
