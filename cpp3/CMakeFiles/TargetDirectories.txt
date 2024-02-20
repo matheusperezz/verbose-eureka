@@ -1,0 +1,3 @@
+/home/matheus/Desktop/work/verbose-eureka/cpp3/CMakeFiles/cpp3.dir
+/home/matheus/Desktop/work/verbose-eureka/cpp3/CMakeFiles/edit_cache.dir
+/home/matheus/Desktop/work/verbose-eureka/cpp3/CMakeFiles/rebuild_cache.dir

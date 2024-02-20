@@ -1,2 +1,8 @@
-for i in range(10):
-    print(f"Testando {i} vezes")
+def fibonnaci(n):
+    if n < 0:
+        raise("Num needs to be a positive interger")
+    
+    if n == 0: return []
+
+    return fibonnaci
+    
