@@ -2,6 +2,8 @@
 // Created by Matheus on 14/02/2024.
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -62,4 +64,33 @@ void solution_24() {
     while (temp != nullptr) {
 
     }
+}
+
+
+class Solution39 {
+public:
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> result;
+        vector<int> current;
+        sort(candidates.begin(), candidates.end());
+        backtrack(candidates, target, result, current, 0);
+        return result;
+    }
+
+    void backtrack(vector<int>& candidates, int target, vector<vector<int>>& result, vector<int>& current, int start){
+        if (target == 0){
+            result.push_back(current);
+            return;
+        }
+
+        for (int i = start; i < candidates.size() && candidates[i] <= target; i++){
+            current.push_back(candidates[i]);
+            backtrack(candidates, target - candidates[i], result, current, i);
+            current.pop_back();
+        }
+    }
+};
+
+void solution_39(){
+
 }
