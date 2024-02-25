@@ -8,5 +8,6 @@
 int testFunctionMediumLeetCode();
 void solution_24();
 void solution_39();
+void solution_40();
 
 #endif //LEETCODE_MEDIUM_H

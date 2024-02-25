@@ -13,7 +13,6 @@
 using namespace std;
 
 int main() {
-    auto c = testFunctionMediumLeetCode();
-    cout << "Fazendo qualquer outro teste" << c << endl;
+    solution_40();
     return 0;
 }

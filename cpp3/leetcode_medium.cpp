@@ -46,24 +46,12 @@ public:
             cout << node->val << " ";
             node = node->next;
         }
+        return node;
     }
 };
 
 void solution_24() {
-    Solution24 s;
-    auto *head = new ListNode(10);
-    ListNode *current = head;
-
-    // Adicionando os elementos restantes
-    for (int i = 9; i > 0; --i) {
-        current->next = new ListNode(i);
-        current = current->next;
-    }
-
-    ListNode *temp = head;
-    while (temp != nullptr) {
-
-    }
+    
 }
 
 
@@ -93,4 +81,42 @@ public:
 
 void solution_39(){
 
+}
+
+class Solution40 {
+public:
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        vector<vector<int>> output;
+        vector<int> combination;
+        
+        sort(candidates.begin(), candidates.end());
+
+        backtrack(candidates, target, output, combination, 0);
+
+        return output;
+    }
+
+    void backtrack(vector<int> & candidates, int target, vector<vector<int>>& result, vector<int>& combination, int start){
+        if (target == 0){
+            result.push_back(combination);
+            return;
+        }
+
+        for (int i = start; i < candidates.size() && candidates[i] <= target; i++){
+            if (i > start && candidates[i] == candidates[i - 1])
+                continue;
+
+            combination.push_back(candidates[i]);
+            backtrack(candidates, target - candidates[i], result, combination, i + 1);
+            combination.pop_back();
+        }
+    }
+};
+
+void solution_40() {
+    Solution40 s;
+    vector<int> candidates = {10,1,2,7,6,1,5};
+    int target = 8;
+
+    auto result = s.combinationSum2(candidates, target);
 }
