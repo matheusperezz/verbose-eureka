@@ -1,7 +1,15 @@
 package leetcodeMedium
 
-class Solution56 {
-    fun merge(intervals: Array<IntArray>): Array<IntArray> {
+
+class Solution57 {
+    fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+        val combination = intervals.toMutableList()
+        combination.add(newInterval)
+        val output = merge(combination.toTypedArray())
+        return output
+    }
+
+    private fun merge(intervals: Array<IntArray>): Array<IntArray> {
         if (intervals.isEmpty()) return arrayOf()
 
         intervals.sortBy { it[0] }
@@ -26,10 +34,11 @@ class Solution56 {
 }
 
 fun main(){
-    val s = Solution56()
-    val intervals = arrayOf(intArrayOf(1,4), intArrayOf(4,5))
-    val r = s.merge(intervals)
-    r.forEach { ints ->
+    val s = Solution57()
+    val intervals = arrayOf(intArrayOf(1,2), intArrayOf(3,5), intArrayOf(6,7), intArrayOf(8,10), intArrayOf(12,16))
+    val newInterval = intArrayOf(4,8)
+    val result = s.insert(intervals, newInterval)
+    result.forEach { ints ->
         ints.forEach {
             print("$it ")
         }
