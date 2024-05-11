@@ -1,14 +1,9 @@
-"""
-[1,2,3,4,5]
-"""
+def solve(n):
+    m = n * 9
+    a = m // 10
+    b = m % 10
+    s = (a+b) - 5
+    print(f'n: {n} resultado: {s}')
 
-n = 5
-res = []
-for i in range(0, n+1):
-    binary = bin(i)
-    binary = binary[2:]
-    binary_list = [int(digit) for digit in binary]
-    count = binary_list.count(1)
-    res.append(count)
-
-print(res)
+for i in range(1, 10):
+    solve(i)
