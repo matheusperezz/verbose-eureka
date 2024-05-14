@@ -28,6 +28,6 @@ def merge(left, right):
 
 
 # Usage example
-arr = [38, 27, 43, 3, 9, 10]
-sorted_arr = merge_sort(arr)
+nums = [38, 27, 43, 3, 9, 10]
+sorted_arr = merge_sort(nums)
 print(sorted_arr)
