@@ -36,6 +36,21 @@ class Graph:
         visited = set()
         self.dfs_util(start, visited)
 
+    def dfs_iterative(self, start):
+        stack = [start]
+        visiteds = set()
+
+        while stack:
+            vertex = stack.pop()
+            if vertex not in visiteds:
+                visiteds.add(vertex)
+                print(vertex)
+
+                for neighbor in self.graph[vertex]:
+                    if neighbor not in visiteds:
+                        stack.append(neighbor)
+
+
 """
 
 """
