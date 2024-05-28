@@ -1,3 +1,18 @@
+"""
+AVL Trees
+    - Self-balancing binary search tree
+    - named after Adelson-Velsky and Landis
+    - similar to red-black trees
+    - perform fixes after insert and delete
+        - height-balanced => longests path to root to a leaf
+    - guarantees specific time complexities for operations
+        - O(log n) - search, insert, delete
+
+    For any node, the height of its two subtrees differs by at most 1
+    balance factor = height of left subtree - height of right subtree
+    {-1, 0, 1}
+
+"""
 class TreeNode:
     def __init__(self, key) -> None:
         self.key = key
