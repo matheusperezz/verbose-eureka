@@ -1,5 +1,5 @@
 import gleam/io
 
-pub fn main() {
+pub fn () {
   io.println("Hello from gleamstudy!")
 }
