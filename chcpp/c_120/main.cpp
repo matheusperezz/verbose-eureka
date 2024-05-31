@@ -22,5 +22,6 @@ int main(){
   cout << endl;
 
   cout << "Testing the print" << endl;
+  cout << "Windows printing fine" << endl;
   return 0;
 }
