@@ -6,22 +6,18 @@ using namespace std;
 
 int main(){
 
+  // Variables
   string line;
-  vector<string> lines;
+  int n;
+  vector<vector<string>> lines;
   
-  getline(cin, line);
-  istringstream stream(line);
-  string word;
-  while (stream >> word){
-    lines.push_back(word);
+  // Reading data
+  cin >> n;
+  for (int i = 0; i < n; i++){
+    vector<string> words;
+    string line;
+    getline(cin, line);
   }
 
-  for (const string& w: lines){
-    cout << w << " ";
-  }
-  cout << endl;
-
-  cout << "Testing the print" << endl;
-  cout << "Windows printing fine" << endl;
   return 0;
 }
