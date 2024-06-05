@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5093e971-db22-4a4a-a37f-b33ce8017c5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chcpp/c_120/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/chcpp/c_120/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +47,7 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/mathe/Work/mvvm-app",
+    "last_opened_file_path": "C:/Users/mathe/Work/verbose-eureka",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,7 +94,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.17011.90" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17011.127" />
+        <option value="bundled-python-sdk-48aec45f0201-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
@@ -113,6 +113,8 @@
       <workItem from="1715692234588" duration="1085000" />
       <workItem from="1716301281351" duration="849000" />
       <workItem from="1717343915482" duration="24000" />
+      <workItem from="1717531785457" duration="19000" />
+      <workItem from="1717694241678" duration="1812000" />
     </task>
     <servers />
   </component>
