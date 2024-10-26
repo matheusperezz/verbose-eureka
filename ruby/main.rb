@@ -51,3 +51,4 @@ result = case score
 end
 
 puts result
+puts "Testando alguma coisa"
