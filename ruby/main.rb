@@ -5,7 +5,7 @@
     [a-z] or _      A local variable
     [A-Z]           A constante
     @@              A class variable
-
+    Qualquer outro comentário
 =end
 
 def saySomething()
