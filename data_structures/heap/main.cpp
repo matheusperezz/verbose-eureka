@@ -34,7 +34,7 @@ private:
         }
     }
 
-    // Function to move a element to the bottom of heap, and readjust
+    // Function to move an element to the bottom of heap, and readjust
     void heapifyDown(int index)
     {
         int leftChild = 2 * index + 1;
@@ -77,14 +77,15 @@ public:
 
         int max = heap[0];
         heap[0] = heap.back(); // reference to the last item in vector
-        heap.pop_back();
+        cout << "Current heap 0 on extract max: " << heap[0] << endl;
+        heap.pop_back(); // delete the last element in vector
         heapifyDown(0);
 
         return max;
     }
 
     // Function to verify if heap is empty
-    bool isEmpty() const
+    [[nodiscard]] bool isEmpty() const
     {
         return heap.empty();
     }
@@ -99,9 +100,10 @@ int main()
     maxHeap.insert(15);
     maxHeap.insert(21);
 
+    cout << "Removing: " << maxHeap.extractMax() << endl;
     while (!maxHeap.isEmpty())
     {
-        cout << maxHeap.extractMax() << " ";
+        cout << maxHeap.extractMax() << endl;
     }
 
     cout << endl;

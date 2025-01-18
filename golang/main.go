@@ -2,17 +2,19 @@ package main
 
 import (
 	"fmt"
-	"main/leetcode"
-	"main/utils"
 )
 
 func main() {
+	var a, m, c int
+	fmt.Scanf("%d %d %d", &a, &m, &c)
+	max_sw := min(a/2, min(m/2, c/5))
 
-	nums := []int{2, 7, 11, 15, 7}
-	target := 9
+	fmt.Println(max_sw)
+}
 
-	uniques := utils.RemoveDuplicates(nums)
-	fmt.Println(uniques)
-
-	leetcode.TwoSum(nums, target)
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
 }
