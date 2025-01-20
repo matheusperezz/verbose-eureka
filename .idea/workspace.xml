@@ -16,12 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5093e971-db22-4a4a-a37f-b33ce8017c5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/verbose-eureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/verbose-eureka.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_structures/heap/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/data_structures/heap/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/golang/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/golang/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/golang/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +37,16 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2WjfXhYFek298oewfk6582CDxcG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "C/C++ File.main.cpp (1).executor": "Run",
     "C/C++ File.main.cpp.executor": "Run",
     "Node.js.prototypes.js.executor": "Run",
     "Python.main.executor": "Run",
@@ -73,7 +73,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="C/C++ File.main.cpp">
+  <component name="RunManager" selected="C/C++ File.main.cpp (1)">
+    <configuration name="main.cpp (1)" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="verbose-eureka" TARGET_NAME="main.cpp" CONFIG_NAME="main.cpp">
+      <option name="sourceFile" value="algorithm\quick_sort\main.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="verbose-eureka" TARGET_NAME="main.cpp" CONFIG_NAME="main.cpp">
       <option name="sourceFile" value="data_structures\heap\main.cpp" />
       <method v="2">
@@ -108,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="C/C++ File.main.cpp (1)" />
         <item itemvalue="C/C++ File.main.cpp" />
         <item itemvalue="Node.js.prototypes.js" />
       </list>
@@ -138,6 +145,7 @@
       <workItem from="1717531785457" duration="19000" />
       <workItem from="1717694241678" duration="1812000" />
       <workItem from="1737207976014" duration="1401000" />
+      <workItem from="1737329901571" duration="3515000" />
     </task>
     <servers />
   </component>
