@@ -114,6 +114,29 @@ class SearchBinaryTree {
                 delete node;
             }
         }
+
+        Node* leftRotate(Node* root) {
+            if (root == nullptr || root->right == nullptr) {
+                return root; // não pode rotacionar
+            }
+
+            Node* newRoot = root->right;
+            root->right = newRoot->left;
+            newRoot->left = root;
+
+            return newRoot;
+        }
+
+        Node* rightRotate(Node* root) {
+            if (root == nullptr || root->left == nullptr)
+                return root;
+
+            Node* newRoot = root->left;
+            root->left = newRoot->right;
+            newRoot->right = root;
+
+            return newRoot;
+        }
 };
 
 int main(){

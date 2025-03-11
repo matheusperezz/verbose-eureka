@@ -31,7 +31,7 @@ private:
     }
 
 public:
-    HashMap(int size) : capacity(size)
+    explicit HashMap(int size) : capacity(size)
     {
         table.resize(capacity, nullptr);
     }
