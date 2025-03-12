@@ -57,6 +57,71 @@ struct Node {
     }
 };
 
+struct RBNode {
+    int data;
+    RBNode *left, *right, *parent;
+    bool color;
+
+    RBNode(const int data) {
+        this->data = data;
+        left = left = parent = nullptr;
+        color = true;
+    }
+};
+
+class RedBlackTree {
+public:
+    RBNode* root;
+
+    RedBlackTree() { root = nullptr; }
+    /*
+     *  A rotação à esquerda ocorre quando um nó precisa ser movido para baixo e seu filho direito precisa subir
+     *  Dado um nó X e seu filho direito Y:
+     *      1 - Y se torna o novo pai de X
+     *      2 - O filho esquerdo de Y se torna o filho direito do X
+     *      3 - A subárvore de x é atualizada para manter a relação de BST
+     */
+    void leftRotate(RBNode* x) {
+        RBNode* y = x->right;
+        x->right = y->left;
+
+        if (y->left != nullptr)
+            y->left->parent = x;
+
+        y->parent = x->parent;
+
+        if (x->parent == nullptr)
+            root = y;
+        else if (x == x->parent->left)
+            x->parent->left = y;
+        else
+            x->parent->left = y;
+
+        y->left = x;
+        x->parent = y;
+    }
+
+    void rightRotate(RBNode* y) {
+        RBNode* x = y->left;
+        y->left = x->right;
+
+        if (x->right != nullptr)
+            x->right->parent = y;
+
+        x->parent = y->parent;
+
+        if (y->parent == nullptr)
+            root = x;
+        else if (y == y->parent->left)
+            y->parent->left = x;
+        else
+            y->parent->right = x;
+
+        x->right = y;
+        y->parent = x;
+    }
+};
+
 class SearchBinaryTree {
     public:
         SearchBinaryTree(){

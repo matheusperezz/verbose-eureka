@@ -1,0 +1,9 @@
+# ninja log v6
+3	282	7634500681868243	CMakeFiles/dynamic_programming.dir/cutrod.cpp.obj	bf50043feed43d08
+283	376	7634500684672624	dynamic_programming.exe	d9d67937647472ae
+5	316	7634502743279625	CMakeFiles/dynamic_programming.dir/cutrod.cpp.obj	bf50043feed43d08
+316	393	7634502746390172	dynamic_programming.exe	d9d67937647472ae
+5	313	7634503327458824	CMakeFiles/dynamic_programming.dir/cutrod.cpp.obj	bf50043feed43d08
+313	390	7634503330538624	dynamic_programming.exe	d9d67937647472ae
+5	315	7634503406757299	CMakeFiles/dynamic_programming.dir/cutrod.cpp.obj	bf50043feed43d08
+315	392	7634503409871069	dynamic_programming.exe	d9d67937647472ae
